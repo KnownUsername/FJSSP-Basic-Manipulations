@@ -23,7 +23,7 @@
 typedef struct Operation {
 	int opIdentifier; // assuming identifier can only assume integer values
 	ProcessList alternProcesses; // List of possible processes to complete an operation
-};
+}Operation;
 
 /// <summary>
 /// Defines a list of Operations
@@ -31,5 +31,5 @@ typedef struct Operation {
 typedef struct OperationList {
 	Operation op;
 	struct OperationList* nextOperation;
-};
+}OperationList;
 #endif

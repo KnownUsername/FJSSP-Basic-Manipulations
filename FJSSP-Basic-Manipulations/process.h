@@ -15,16 +15,20 @@
 #ifndef PROCESS
 #define PROCESS
 
-// Defines 1 process
+/// <summary>
+/// Defines 1 process
+/// </summary>
 typedef struct Process{
 	int machine; // assuming machine id can only assume integer values
 	int time; // For now, assuming same as above
 }Process;
 
 
-/* Defines a list of Processes */
+/// <summary>
+/// Defines a list of Processes
+/// </summary>
 typedef struct ProcessList {
 	Process process;
 	struct ProcessList* nextProcess;
-};
+}ProcessList;
 #endif
