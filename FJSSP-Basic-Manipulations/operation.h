@@ -29,7 +29,14 @@ typedef struct Operation {
 /// Defines a list of Operations
 /// </summary>
 typedef struct OperationList {
-	Operation op;
+	Operation operation;
 	struct OperationList* nextOperation;
 }OperationList;
+
+// Inserts a Operation on a list of Operations
+OperationList* InsertOperation(OperationList* operationList, Operation newOperation);
+
+// Creates a Operation with given values
+Operation CreateOperation(int opIdentifier, ProcessList processList);
+
 #endif
