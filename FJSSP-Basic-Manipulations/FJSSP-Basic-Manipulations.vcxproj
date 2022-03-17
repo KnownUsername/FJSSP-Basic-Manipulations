@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="process.c" />
     <ClCompile Include="process.h" />
   </ItemGroup>
   <ItemGroup>
