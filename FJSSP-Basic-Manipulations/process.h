@@ -31,4 +31,11 @@ typedef struct ProcessList {
 	Process process;
 	struct ProcessList* nextProcess;
 }ProcessList;
+
+
+/*		Methods		*/
+
+// Inserts a process on a process list
+ProcessList* InsertProcess(ProcessList* processList, Process newProcess);
+
 #endif
