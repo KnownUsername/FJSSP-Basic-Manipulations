@@ -21,8 +21,8 @@
 /// Defines 1 job
 /// </summary>
 typedef struct Job {
-	int jobIdentifier; // assuming identifier can only assume integer values
-	OperationList* operations;
+	int jobIdentifier; 
+	OperationList* operations; // List of operations to complete a job
 }Job;
 
 /// <summary>

@@ -19,8 +19,8 @@
 /// Defines 1 process
 /// </summary>
 typedef struct Process{
-	int machine; // assuming machine id can only assume integer values
-	int time; // For now, assuming same as above
+	int machine; 
+	int time; 
 }Process;
 
 

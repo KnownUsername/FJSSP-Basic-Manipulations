@@ -21,7 +21,7 @@
 /// Defines 1 Operation
 /// </summary>
 typedef struct Operation {
-	int opIdentifier; // assuming identifier can only assume integer values
+	int opIdentifier; 
 	ProcessList alternProcesses; // List of possible processes to complete an operation
 }Operation;
 
