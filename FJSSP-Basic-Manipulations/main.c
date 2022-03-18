@@ -17,38 +17,21 @@
 #include <stdio.h>
 
 int main() {
-	Process newProcess;
-	newProcess.machine = 1;
-	newProcess.time = 3;
+	Process newProcess = CreateProcess(1, 3);
 
-	Process secondProcess;
-	secondProcess.machine = 2;
-	secondProcess.time = 3;
+	Process secondProcess = CreateProcess(2, 3);
 
 	ProcessList* processList = NULL;
 	processList = InsertProcess(processList, newProcess);
 
 
-	//if (InsertProcess(processList, newProcess)) {
 	if (InsertProcess(processList, secondProcess)) {
 
 		newProcess.machine = 6;
 		newProcess.time = 1;
 		InsertProcess(processList, newProcess);
 
-		printf("Success");
-
-		printf("1st Machine\n");
-		printf("Process: %d\n", processList->process.machine);
-		printf("Time: %d", processList->process.time);
-
-		printf("\n\n2nd Machine\n");
-		printf("Process: %d\n", processList->nextProcess->process.machine);
-		printf("Time: %d", processList->nextProcess->process.time);
-
-		printf("\n\n3rd Machine\n");
-		printf("Process: %d\n", processList->nextProcess->nextProcess->process.machine);
-		printf("Time: %d", processList->nextProcess->nextProcess->process.time);
+		//ShowProcessList(processList);
 
 	}
 	else printf("Unsucessfull");
@@ -63,5 +46,8 @@ int main() {
 	operations = InsertOperation(operations, operation);
 	InsertOperation(operations, operation2);
 
+	//ShowOperation(operation);
+	ShowOperationList(operations);
+	
 	return 0;
 }
