@@ -35,7 +35,15 @@ typedef struct ProcessList {
 
 /*		Methods		*/
 
+// Creates a Process with given values
+Process CreateProcess(int machine, int time);
+
 // Inserts a process on a process list
 ProcessList* InsertProcess(ProcessList* processList, Process newProcess);
 
+// Prints values of a Process
+void ShowProcess(Process process);
+
+// Shows values of processes on a list
+void ShowProcessList(ProcessList* processList);
 #endif

@@ -107,3 +107,21 @@ ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 	return processList;
 }
 
+/// <summary>
+/// Prints values of a Process
+/// </summary>
+void ShowProcess(Process process) {
+	printf("Machine: %d\n", process.machine);
+	printf("Time: %d\n\n", process.time);
+}
+
+/// <summary>
+/// Shows values of processes on a list
+/// </summary>
+/// <param name="processList"></param>
+void ShowProcessList(ProcessList* processList) {
+	while (processList) {
+		ShowProcess(processList->process);
+		processList = processList->nextProcess;
+	}
+}
