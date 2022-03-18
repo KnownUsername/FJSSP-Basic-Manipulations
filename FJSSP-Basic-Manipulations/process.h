@@ -46,4 +46,7 @@ void ShowProcess(Process process);
 
 // Shows values of processes on a list
 void ShowProcessList(ProcessList* processList);
+
+// Removes a process from a list, given its using machine
+ProcessList* RemoveProcess(ProcessList* processList, int machineID);
 #endif

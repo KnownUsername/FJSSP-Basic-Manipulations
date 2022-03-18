@@ -125,3 +125,34 @@ void ShowProcessList(ProcessList* processList) {
 		processList = processList->nextProcess;
 	}
 }
+
+/// <summary>
+/// Removes a process from a list, given its using machine
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="machineID"></param>
+/// <returns></returns>
+ProcessList* RemoveProcess(ProcessList* processList, int machineID) {
+
+	// For element on 1st position
+	if (processList && (processList->process.machine == machineID) ) {
+		ProcessList* aux = processList->nextProcess;
+		free(processList);
+		return aux;
+	}
+
+	// Search on all elements
+	while (processList->nextProcess) {
+
+		// Correspondence between next element's machine id and desired
+		if (processList->nextProcess->process.machine == machineID) {
+			ProcessList* aux = processList->nextProcess->nextProcess;
+			free(processList->nextProcess);
+			processList->nextProcess = aux;
+			break;
+		}
+		processList = processList->nextProcess;
+	}
+
+	return processList;
+}
