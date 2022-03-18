@@ -36,6 +36,10 @@ int main() {
 	}
 	else printf("Unsucessfull");
 
+	processList = RemoveProcess(processList, 1);
+
+	ShowProcessList(processList);
+
 	Operation operation;
 	operation = CreateOperation(1, *processList);
 
