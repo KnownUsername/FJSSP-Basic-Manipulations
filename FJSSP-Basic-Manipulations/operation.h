@@ -39,4 +39,10 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 // Creates a Operation with given values
 Operation CreateOperation(int opIdentifier, ProcessList processList);
 
+// Prints values of an Operation
+void ShowOperation(Operation operation);
+
+// Prints values of operations on a list
+void ShowOperationList(OperationList* operationList);
+
 #endif

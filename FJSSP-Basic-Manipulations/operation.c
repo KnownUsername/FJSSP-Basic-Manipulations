@@ -107,3 +107,21 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 	return operationList;
 }
 
+/// <summary>
+/// Prints values of an Operation
+/// </summary>
+void ShowOperation(Operation operation) {
+	printf("Operation %d\n", operation.opIdentifier);
+	ShowProcessList(&operation.alternProcesses);
+}
+
+/// <summary>
+/// Prints values of operations on a list
+/// </summary>
+/// <param name="operationList"></param>
+void ShowOperationList(OperationList* operationList) {
+	while (operationList) {
+		ShowOperation(operationList->operation);
+		operationList = operationList->nextOperation;
+	}
+}
