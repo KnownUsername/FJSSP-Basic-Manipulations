@@ -1,0 +1,198 @@
+\hypertarget{process_8c}{}\doxysection{F\+J\+S\+S\+P-\/\+Basic-\/\+Manipulations/process.c File Reference}
+\label{process_8c}\index{FJSSP-\/Basic-\/Manipulations/process.c@{FJSSP-\/Basic-\/Manipulations/process.c}}
+{\ttfamily \#include \char`\"{}process.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process}{Process}} \mbox{\hyperlink{process_8c_a48de4261659da2774cc4c2dcc16f6af9}{Create\+Process}} (int machine, int time)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{struct_process}{Process}} with given values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} \mbox{\hyperlink{process_8c_a316b4b29891b00f2f9a279a3fb4dddd5}{Create\+Process\+List\+Element}} (\mbox{\hyperlink{struct_process}{Process}} process)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{struct_process_list}{Process\+List}} \textquotesingle{}element\textquotesingle{} with a \mbox{\hyperlink{struct_process}{Process}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8c_ad312336d79e765456605370d73d60acc}{Process\+Exists}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine)
+\begin{DoxyCompactList}\small\item\em Verify if process exists on a list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}{Insert\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, \mbox{\hyperlink{struct_process}{Process}} new\+Process)
+\begin{DoxyCompactList}\small\item\em Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a1b241ddb7c969501b01055692b5ec3c7}{Show\+Process}} (\mbox{\hyperlink{struct_process}{Process}} process)
+\begin{DoxyCompactList}\small\item\em Prints values of a \mbox{\hyperlink{struct_process}{Process}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a5065d553fd66b0d47ff8353f30d97437}{Show\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
+\begin{DoxyCompactList}\small\item\em Shows values of processes on a list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a0a45b151b9ebbf342843ed100822eabc}{Remove\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine\+ID)
+\begin{DoxyCompactList}\small\item\em Removes a process from a list, given its using machine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a8a773cd2d1ef50932f1e7d06d09b443a}{Delete\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
+\begin{DoxyCompactList}\small\item\em Deletes a list (= removes all elements on the list, leaving it empty) Recursive implementation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_8c_a48de4261659da2774cc4c2dcc16f6af9}\label{process_8c_a48de4261659da2774cc4c2dcc16f6af9}} 
+\index{process.c@{process.c}!CreateProcess@{CreateProcess}}
+\index{CreateProcess@{CreateProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{CreateProcess()}{CreateProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process}{Process}} Create\+Process (\begin{DoxyParamCaption}\item[{int}]{machine,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{struct_process}{Process}} with given values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em machine} & \\
+\hline
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 23 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a316b4b29891b00f2f9a279a3fb4dddd5}\label{process_8c_a316b4b29891b00f2f9a279a3fb4dddd5}} 
+\index{process.c@{process.c}!CreateProcessListElement@{CreateProcessListElement}}
+\index{CreateProcessListElement@{CreateProcessListElement}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{CreateProcessListElement()}{CreateProcessListElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}} Create\+Process\+List\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process}{Process}}}]{process }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{struct_process_list}{Process\+List}} \textquotesingle{}element\textquotesingle{} with a \mbox{\hyperlink{struct_process}{Process}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 38 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a8a773cd2d1ef50932f1e7d06d09b443a}\label{process_8c_a8a773cd2d1ef50932f1e7d06d09b443a}} 
+\index{process.c@{process.c}!DeleteProcessList@{DeleteProcessList}}
+\index{DeleteProcessList@{DeleteProcessList}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{DeleteProcessList()}{DeleteProcessList()}}
+{\footnotesize\ttfamily void Delete\+Process\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List }\end{DoxyParamCaption})}
+
+
+
+Deletes a list (= removes all elements on the list, leaving it empty) Recursive implementation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
+\index{process.c@{process.c}!InsertProcess@{InsertProcess}}
+\index{InsertProcess@{InsertProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{InsertProcess()}{InsertProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Insert\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{\mbox{\hyperlink{struct_process}{Process}}}]{new\+Process }\end{DoxyParamCaption})}
+
+
+
+Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+{\em time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 78 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_ad312336d79e765456605370d73d60acc}\label{process_8c_ad312336d79e765456605370d73d60acc}} 
+\index{process.c@{process.c}!ProcessExists@{ProcessExists}}
+\index{ProcessExists@{ProcessExists}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{ProcessExists()}{ProcessExists()}}
+{\footnotesize\ttfamily int Process\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine }\end{DoxyParamCaption})}
+
+
+
+Verify if process exists on a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/$>$ True $\vert$ 0 -\/$>$ False 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a0a45b151b9ebbf342843ed100822eabc}\label{process_8c_a0a45b151b9ebbf342843ed100822eabc}} 
+\index{process.c@{process.c}!RemoveProcess@{RemoveProcess}}
+\index{RemoveProcess@{RemoveProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{RemoveProcess()}{RemoveProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Remove\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine\+ID }\end{DoxyParamCaption})}
+
+
+
+Removes a process from a list, given its using machine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine\+ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 148 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a1b241ddb7c969501b01055692b5ec3c7}\label{process_8c_a1b241ddb7c969501b01055692b5ec3c7}} 
+\index{process.c@{process.c}!ShowProcess@{ShowProcess}}
+\index{ShowProcess@{ShowProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{ShowProcess()}{ShowProcess()}}
+{\footnotesize\ttfamily void Show\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process}{Process}}}]{process }\end{DoxyParamCaption})}
+
+
+
+Prints values of a \mbox{\hyperlink{struct_process}{Process}} 
+
+
+
+Definition at line 126 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a5065d553fd66b0d47ff8353f30d97437}\label{process_8c_a5065d553fd66b0d47ff8353f30d97437}} 
+\index{process.c@{process.c}!ShowProcessList@{ShowProcessList}}
+\index{ShowProcessList@{ShowProcessList}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{ShowProcessList()}{ShowProcessList()}}
+{\footnotesize\ttfamily void Show\+Process\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List }\end{DoxyParamCaption})}
+
+
+
+Shows values of processes on a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file process.\+c.
+
