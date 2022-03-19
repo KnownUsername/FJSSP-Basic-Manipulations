@@ -22,7 +22,7 @@
 /// </summary>
 typedef struct Operation {
 	int opIdentifier; 
-	ProcessList alternProcesses; // List of possible processes to complete an operation
+	ProcessList *alternProcesses; // List of possible processes to complete an operation
 }Operation;
 
 /// <summary>
@@ -37,12 +37,16 @@ typedef struct OperationList {
 OperationList* InsertOperation(OperationList* operationList, Operation newOperation);
 
 // Creates a Operation with given values
-Operation CreateOperation(int opIdentifier, ProcessList processList);
+Operation CreateOperation(int opIdentifier, ProcessList* processList);
 
 // Prints values of an Operation
 void ShowOperation(Operation operation);
 
 // Prints values of operations on a list
 void ShowOperationList(OperationList* operationList);
+
+
+// Removes an operation from a list, given its identifier
+OperationList* RemoveOperation(OperationList* operationList, int opIdentifier);
 
 #endif

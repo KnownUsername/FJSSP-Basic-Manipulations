@@ -1,5 +1,18 @@
+/*
+	Student: João Rodrigues
+	Student Number: 16928
+	Lective year: 2021/2022
+
+	Subject: Advanced Data Structures
+	About: First Practical Work
+
+	File: process.h
+	Intent:
+		- Implement functions to manipulate 1 or more Processes
+*/
+
 #include "operation.h"
-#include <stdlib.h>
+#include <stdio.h>
 
 /// <summary>
 /// Creates a Operation with given values
@@ -7,7 +20,7 @@
 /// <param name="opIdentifier"></param>
 /// <param name="time"></param>
 /// <returns></returns>
-Operation CreateOperation(int opIdentifier, ProcessList processList) {
+Operation CreateOperation(int opIdentifier, ProcessList* processList) {
 	Operation createdElement;
 
 	// Values' attribution
@@ -18,7 +31,7 @@ Operation CreateOperation(int opIdentifier, ProcessList processList) {
 }
 
 /// <summary>
-/// Creates a OperationList 'element' with a Operation
+/// Creates a OperationList 'element' with an Operation
 /// </summary>
 /// <param name="Operation"></param>
 /// <returns></returns>
@@ -67,9 +80,6 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 	// Empty List
 	if (!operationList) {
 
-		// Struture to store new element on list
-		//OperationList aux = CreateOperationListElement(newOperation);
-
 		// Unique element is the pointer to new element
 		operationList = (OperationList*)malloc(sizeof(OperationList));
 		operationList->operation = newOperation;
@@ -94,8 +104,6 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 			OperationList aux = CreateOperationListElement(newOperation);
 
 			// Connect last element to new one, by pointers
-			//lastElement->nextOperation = &aux;
-
 			lastElement->nextOperation = (OperationList*)malloc(sizeof(OperationList));
 			lastElement->nextOperation->operation = newOperation;
 			lastElement->nextOperation->nextOperation = NULL;
@@ -112,7 +120,7 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 /// </summary>
 void ShowOperation(Operation operation) {
 	printf("Operation %d\n", operation.opIdentifier);
-	ShowProcessList(&operation.alternProcesses);
+	ShowProcessList(operation.alternProcesses);
 }
 
 /// <summary>
@@ -124,4 +132,50 @@ void ShowOperationList(OperationList* operationList) {
 		ShowOperation(operationList->operation);
 		operationList = operationList->nextOperation;
 	}
+}
+
+/// <summary>
+/// Removes an operation from a list, given its identifier
+/// </summary>
+/// <param name="operationList"></param>
+/// <param name="opIdentifier"></param>
+/// <returns></returns>
+OperationList* RemoveOperation(OperationList* operationList, int opIdentifier) {
+	
+	// For element on 1st position
+	if (operationList && (operationList->operation.opIdentifier == opIdentifier)) {
+		OperationList* aux = operationList->nextOperation;
+		DeleteProcessList(operationList->operation.alternProcesses);
+		free(operationList);
+		return aux;
+	}
+
+	// Keep stored 1st element, since it's the same, to retrieve
+	OperationList* firstOperation = operationList;
+
+	// Search on all elements
+	while (operationList->nextOperation) {
+
+		// Correspondence between next element's machine id and desired
+		if (operationList->nextOperation->operation.opIdentifier == opIdentifier) {
+			
+			// Reach to next element, after the desired Operation
+			OperationList* aux = operationList->nextOperation->nextOperation;
+
+			// Remove Processes from Operation (free memory)
+			DeleteProcessList(operationList->nextOperation->operation.alternProcesses);
+
+			// Free allocated memory on Operation
+			free(operationList->nextOperation);
+
+			// Connect elements that were before and after deleted Operation
+			operationList->nextOperation = aux;
+			break;
+		}
+
+		// Pass to next element
+		operationList = operationList->nextOperation;
+	}
+
+	return firstOperation;
 }
