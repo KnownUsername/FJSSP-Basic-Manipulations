@@ -1,3 +1,16 @@
+/*
+	Student: João Rodrigues
+	Student Number: 16928
+	Lective year: 2021/2022
+
+	Subject: Advanced Data Structures
+	About: First Practical Work
+
+	File: process.h
+	Intent:
+		- Implement functions to manipulate 1 or more Processes
+*/
+
 #include "process.h"
 #include <stdlib.h>
 
@@ -141,18 +154,44 @@ ProcessList* RemoveProcess(ProcessList* processList, int machineID) {
 		return aux;
 	}
 
+	// Keep stored 1st element, since it's the same, to retrieve
+	ProcessList* firstProcess = processList;
+
 	// Search on all elements
 	while (processList->nextProcess) {
 
 		// Correspondence between next element's machine id and desired
 		if (processList->nextProcess->process.machine == machineID) {
+
+			// Reach to next element, after the desired Process
 			ProcessList* aux = processList->nextProcess->nextProcess;
+
+			// Free allocated memory on Process
 			free(processList->nextProcess);
+
+			// Connect elements that were before and after deleted Process
 			processList->nextProcess = aux;
 			break;
 		}
+
+		// Pass to next element
 		processList = processList->nextProcess;
 	}
 
-	return processList;
+	return firstProcess;
+}
+
+/// <summary>
+/// Deletes a list (= removes all elements on the list, leaving it empty)
+/// Recursive implementation
+/// </summary>
+/// <param name="processList"></param>
+void DeleteProcessList(ProcessList* processList) {
+
+	// Only free memory from existent elements
+	if (processList) {
+		// 'Iterate' till last element 
+		DeleteProcessList(processList->nextProcess);
+		free(processList);
+	}
 }

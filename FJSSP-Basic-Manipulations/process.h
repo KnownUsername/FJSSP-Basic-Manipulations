@@ -49,4 +49,8 @@ void ShowProcessList(ProcessList* processList);
 
 // Removes a process from a list, given its using machine
 ProcessList* RemoveProcess(ProcessList* processList, int machineID);
+
+// Deletes a list (= removes all elements on the list, leaving it empty)
+void DeleteProcessList(ProcessList* processList);
+
 #endif
