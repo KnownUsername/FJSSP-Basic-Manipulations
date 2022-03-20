@@ -52,4 +52,8 @@ OperationList* RemoveOperation(OperationList* operationList, int opIdentifier);
 // Changes the id of an Operation, on a list
 int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId);
 
+
+// Searches an Operation based on the id
+OperationList* SearchOperation(OperationList* operationList, int opIdentifier);
+
 #endif
