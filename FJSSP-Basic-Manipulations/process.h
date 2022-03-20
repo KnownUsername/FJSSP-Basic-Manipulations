@@ -62,4 +62,7 @@ int ChangeProcessTimeOnList(ProcessList* processList, int machine, int newTime);
 // Duplicates a Process list
 ProcessList* DuplicateProcessList(ProcessList* originalProcessList);
 
+// Deletes all Processes of a list, and inserts Processes from the other
+ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newProcessList);
+
 #endif

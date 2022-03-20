@@ -287,3 +287,21 @@ ProcessList* DuplicateProcessList(ProcessList* originalProcessList) {
 
 	return cloneList;
 }
+
+/// <summary>
+/// Deletes all Processes of a list, and inserts Processes from the other
+/// </summary>
+/// <param name="oldProcessList"></param>
+/// <param name="newProcessList"></param>
+/// <returns></returns>
+ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newProcessList) {
+
+	// Free memory from list being replaced
+	DeleteProcessList(oldProcessList);
+
+	// Pass values from 1 list to another, creating a new one
+	oldProcessList = DuplicateProcessList(newProcessList);
+
+	return oldProcessList;
+}
+

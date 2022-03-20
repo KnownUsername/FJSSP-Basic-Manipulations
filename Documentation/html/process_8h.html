@@ -124,6 +124,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a31562a1de36cdee103c9cf2e4cbb97dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a31562a1de36cdee103c9cf2e4cbb97dd">DuplicateProcessList</a> (<a class="el" href="struct_process_list.html">ProcessList</a> *originalProcessList)</td></tr>
 <tr class="memdesc:a31562a1de36cdee103c9cf2e4cbb97dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> list  <a href="process_8h.html#a31562a1de36cdee103c9cf2e4cbb97dd">More...</a><br /></td></tr>
 <tr class="separator:a31562a1de36cdee103c9cf2e4cbb97dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08744ebe03d98b1086658282eac1c59f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8h.html#a08744ebe03d98b1086658282eac1c59f">ReplaceAllProcesses</a> (<a class="el" href="struct_process_list.html">ProcessList</a> *oldProcessList, <a class="el" href="struct_process_list.html">ProcessList</a> *newProcessList)</td></tr>
+<tr class="memdesc:a08744ebe03d98b1086658282eac1c59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all Processes of a list, and inserts Processes from the other  <a href="process_8h.html#a08744ebe03d98b1086658282eac1c59f">More...</a><br /></td></tr>
+<tr class="separator:a08744ebe03d98b1086658282eac1c59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a3b5b0413545e0d4ff600b0a7203e3086"></a>
@@ -427,6 +430,46 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00171">171</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+
+</div>
+</div>
+<a id="a08744ebe03d98b1086658282eac1c59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08744ebe03d98b1086658282eac1c59f">&#9670;&nbsp;</a></span>ReplaceAllProcesses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_list.html">ProcessList</a>* ReplaceAllProcesses </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td>
+          <td class="paramname"><em>oldProcessList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td>
+          <td class="paramname"><em>newProcessList</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deletes all Processes of a list, and inserts Processes from the other </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldProcessList</td><td></td></tr>
+    <tr><td class="paramname">newProcessList</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00297">297</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>

@@ -28,7 +28,9 @@ int \mbox{\hyperlink{process_8c_ac3087b7876b6e91a163527cbd5a6cd8b}{Change\+Proce
 int \mbox{\hyperlink{process_8c_a202ff96838a15eff2b55d6dcb62c091a}{Change\+Process\+Time\+On\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine, int new\+Time)
 \begin{DoxyCompactList}\small\item\em Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, on a list \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}{Duplicate\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$original\+Process\+List)
-\begin{DoxyCompactList}\small\item\em Duplicates a \mbox{\hyperlink{struct_process}{Process}} list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Duplicates a \mbox{\hyperlink{struct_process}{Process}} list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a08744ebe03d98b1086658282eac1c59f}{Replace\+All\+Processes}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$old\+Process\+List, \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$new\+Process\+List)
+\begin{DoxyCompactList}\small\item\em Deletes all Processes of a list, and inserts Processes from the other \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -242,6 +244,30 @@ Removes a process from a list, given its using machine
 
 
 Definition at line 171 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a08744ebe03d98b1086658282eac1c59f}\label{process_8c_a08744ebe03d98b1086658282eac1c59f}} 
+\index{process.c@{process.c}!ReplaceAllProcesses@{ReplaceAllProcesses}}
+\index{ReplaceAllProcesses@{ReplaceAllProcesses}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{ReplaceAllProcesses()}{ReplaceAllProcesses()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Replace\+All\+Processes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{old\+Process\+List,  }\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{new\+Process\+List }\end{DoxyParamCaption})}
+
+
+
+Deletes all Processes of a list, and inserts Processes from the other 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Process\+List} & \\
+\hline
+{\em new\+Process\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 297 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ac3772c66f770adde4e69453a92d9326b}\label{process_8c_ac3772c66f770adde4e69453a92d9326b}} 
 \index{process.c@{process.c}!SearchProcess@{SearchProcess}}

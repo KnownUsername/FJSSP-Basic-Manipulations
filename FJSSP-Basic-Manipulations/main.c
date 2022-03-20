@@ -31,28 +31,13 @@ int main() {
 		newProcess.time = 1;
 		InsertProcess(processList, newProcess);
 
-		//ShowProcessList(processList);
-
 	}
 	else printf("Unsucessfull");
 
-	//processList = RemoveProcess(processList, 6);
-
-	//ShowProcessList(processList);
+	processList = RemoveProcess(processList, 6);
 
 	Operation operation;
 	operation = CreateOperation(1, processList);
-
-
-	ProcessList* copy = NULL;
-	copy = DuplicateProcessList(processList);
-	processList = RemoveProcess(processList, 2);
-	
-	printf("\n ProcessList \n");
-	ShowProcessList(processList);
-	printf("\n Copy \n");
-	ShowProcessList(copy);
-
 
 	/*			Operation 2			*/	
 	ProcessList* processList2 = NULL;
@@ -80,6 +65,9 @@ int main() {
 	ChangeOperationIdOnList(operations, 2, 5);
 	ChangeProcessMachineOnList(SearchOperation(operations, 5)->operation.alternProcesses, 3, 6);
 	ChangeProcessTimeOnList(SearchOperation(operations, 1)->operation.alternProcesses, 1, 13);
+
+	operations->operation.alternProcesses = ReplaceAllProcesses(operations->operation.alternProcesses, processList3);
+	processList3->process.machine = 13;
 
 	// Removal of an operation
 	operations = RemoveOperation(operations, 3);
