@@ -215,12 +215,14 @@ OperationList* RemoveOperation(OperationList* operationList, int opIdentifier) {
 /// <returns></returns>
 int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId) {
 
-	// Get respective operation, based on id
+	// Get operation, based on id
 	OperationList* operation = SearchOperation(operationList, olderId);
 
 	// If Operation not found, there's no id to change
+	// This may occur because of empty lists
 	if (!operation) return 0;
 
+	// Attribution of new value
 	operation->operation.opIdentifier = newId;
 	return 1;
 }
