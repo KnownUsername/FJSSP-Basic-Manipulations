@@ -133,6 +133,7 @@ ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 	return processList;
 }
 
+#pragma region DISPLAY
 /// <summary>
 /// Prints values of a Process
 /// </summary>
@@ -158,6 +159,8 @@ void ShowProcessList(ProcessList* processList) {
 		processList = processList->nextProcess;
 	}
 }
+
+#pragma endregion
 
 /// <summary>
 /// Removes a process from a list, given its using machine
@@ -217,4 +220,26 @@ void DeleteProcessList(ProcessList* processList) {
 		// Free memory allocated from current Process
 		free(processList);
 	}
+}
+
+/// <summary>
+/// Changes the machine of a Process, on a list
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="oldMachine"></param>
+/// <param name="newMachine"></param>
+/// <returns></returns>
+int ChangeProcessMachineOnList(ProcessList* processList, int oldMachine, int newMachine) {
+
+	// Get respective process, based on id
+	ProcessList* foundProcess = SearchProcess(processList, oldMachine);
+	
+	// If Operation not found, there's no id to change
+	// This may occur because of empty lists
+	if (!foundProcess) return 0;
+
+	// Attribution of new value
+	foundProcess->process.machine = newMachine;
+
+	return 1;
 }

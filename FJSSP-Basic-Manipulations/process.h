@@ -53,4 +53,7 @@ ProcessList* RemoveProcess(ProcessList* processList, int machineID);
 // Deletes a list (= removes all elements on the list, leaving it empty)
 void DeleteProcessList(ProcessList* processList);
 
+// Changes the machine of a Process, on a list
+int ChangeProcessMachineOnList(ProcessList* processList, int oldMachine, int newMachine);
+
 #endif
