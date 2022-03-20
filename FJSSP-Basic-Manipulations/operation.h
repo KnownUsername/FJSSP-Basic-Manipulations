@@ -49,4 +49,7 @@ void ShowOperationList(OperationList* operationList);
 // Removes an operation from a list, given its identifier
 OperationList* RemoveOperation(OperationList* operationList, int opIdentifier);
 
+// Changes the id of an Operation, on a list
+int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId);
+
 #endif

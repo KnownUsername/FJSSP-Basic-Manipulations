@@ -130,6 +130,8 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 	return operationList;
 }
 
+#pragma region DISPLAY
+
 /// <summary>
 /// Prints values of an Operation
 /// </summary>
@@ -148,6 +150,7 @@ void ShowOperationList(OperationList* operationList) {
 		operationList = operationList->nextOperation;
 	}
 }
+#pragma endregion
 
 /// <summary>
 /// Removes an operation from a list, given its identifier
@@ -159,9 +162,17 @@ OperationList* RemoveOperation(OperationList* operationList, int opIdentifier) {
 	
 	// For element on 1st position
 	if (operationList && (operationList->operation.opIdentifier == opIdentifier)) {
+
+		// Store next element, to be the new first element
 		OperationList* aux = operationList->nextOperation;
+
+		// Remove Processes from Operation (free memory)
 		DeleteProcessList(operationList->operation.alternProcesses);
+
+		// Free allocated memory on Operation
 		free(operationList);
+
+		// Aux (stored on line 167) became the first element of the list
 		return aux;
 	}
 
@@ -193,4 +204,23 @@ OperationList* RemoveOperation(OperationList* operationList, int opIdentifier) {
 	}
 
 	return firstOperation;
+}
+
+/// <summary>
+/// Changes the id of an Operation, on a list
+/// </summary>
+/// <param name="operationList"></param>
+/// <param name="olderId"></param>
+/// <param name="newId"></param>
+/// <returns></returns>
+int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId) {
+
+	// Get respective operation, based on id
+	OperationList* operation = SearchOperation(operationList, olderId);
+
+	// If Operation not found, there's no id to change
+	if (!operation) return 0;
+
+	operation->operation.opIdentifier = newId;
+	return 1;
 }
