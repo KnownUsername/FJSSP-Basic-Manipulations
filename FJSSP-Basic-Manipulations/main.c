@@ -67,6 +67,7 @@ int main() {
 	InsertOperation(operations, operation3);
 
 	ChangeOperationIdOnList(operations, 2, 5);
+	ChangeProcessMachineOnList(SearchOperation(operations, 5)->operation.alternProcesses, 3, 6);
 
 	// Removal of an operation
 	operations = RemoveOperation(operations, 3);
