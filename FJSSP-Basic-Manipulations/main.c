@@ -36,12 +36,23 @@ int main() {
 	}
 	else printf("Unsucessfull");
 
-	processList = RemoveProcess(processList, 6);
+	//processList = RemoveProcess(processList, 6);
 
 	//ShowProcessList(processList);
 
 	Operation operation;
 	operation = CreateOperation(1, processList);
+
+
+	ProcessList* copy = NULL;
+	copy = DuplicateProcessList(processList);
+	processList = RemoveProcess(processList, 2);
+	
+	printf("\n ProcessList \n");
+	ShowProcessList(processList);
+	printf("\n Copy \n");
+	ShowProcessList(copy);
+
 
 	/*			Operation 2			*/	
 	ProcessList* processList2 = NULL;

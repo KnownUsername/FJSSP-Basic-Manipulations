@@ -59,7 +59,7 @@ ProcessList* SearchProcess(ProcessList* processList, int machine) {
 		// Compare opIdentifiers' values
 		if (processList->process.machine == machine) return processList; // Operation found
 
-		// Navigate to next Operation
+		// Navigate to next Process
 		processList = processList->nextProcess;
 
 	}
@@ -264,4 +264,26 @@ int ChangeProcessTimeOnList(ProcessList* processList, int machine, int newTime) 
 	foundProcess->process.time = newTime;
 
 	return 1;
+}
+
+/// <summary>
+/// Duplicates a Process list
+/// </summary>
+/// <param name="originalProcessList"></param>
+/// <returns></returns>
+ProcessList* DuplicateProcessList(ProcessList* originalProcessList) {
+
+	ProcessList* cloneList = NULL;
+
+	// Run through Process list
+	while (originalProcessList) {
+
+		// Copy correspondent Process to new list
+		cloneList = InsertProcess(cloneList, originalProcessList->process);
+
+		// Pass to next element
+		originalProcessList = originalProcessList->nextProcess;
+	}
+
+	return cloneList;
 }

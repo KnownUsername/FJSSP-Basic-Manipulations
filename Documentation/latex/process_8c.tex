@@ -26,7 +26,9 @@ void \mbox{\hyperlink{process_8c_a8a773cd2d1ef50932f1e7d06d09b443a}{Delete\+Proc
 int \mbox{\hyperlink{process_8c_ac3087b7876b6e91a163527cbd5a6cd8b}{Change\+Process\+Machine\+On\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int old\+Machine, int new\+Machine)
 \begin{DoxyCompactList}\small\item\em Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{process_8c_a202ff96838a15eff2b55d6dcb62c091a}{Change\+Process\+Time\+On\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine, int new\+Time)
-\begin{DoxyCompactList}\small\item\em Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, on a list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}{Duplicate\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$original\+Process\+List)
+\begin{DoxyCompactList}\small\item\em Duplicates a \mbox{\hyperlink{struct_process}{Process}} list \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -146,6 +148,28 @@ Deletes a list (= removes all elements on the list, leaving it empty) Recursive 
 
 
 Definition at line 212 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}\label{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}} 
+\index{process.c@{process.c}!DuplicateProcessList@{DuplicateProcessList}}
+\index{DuplicateProcessList@{DuplicateProcessList}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{DuplicateProcessList()}{DuplicateProcessList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Duplicate\+Process\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{original\+Process\+List }\end{DoxyParamCaption})}
+
+
+
+Duplicates a \mbox{\hyperlink{struct_process}{Process}} list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\+Process\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 274 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
 \index{process.c@{process.c}!InsertProcess@{InsertProcess}}
