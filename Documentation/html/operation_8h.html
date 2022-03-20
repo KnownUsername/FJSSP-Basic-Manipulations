@@ -113,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abadabea5e9276d0cb51ca391a0cf11b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operation_list.html">OperationList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation_8h.html#abadabea5e9276d0cb51ca391a0cf11b4">RemoveOperation</a> (<a class="el" href="struct_operation_list.html">OperationList</a> *operationList, int opIdentifier)</td></tr>
 <tr class="memdesc:abadabea5e9276d0cb51ca391a0cf11b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an operation from a list, given its identifier  <a href="operation_8h.html#abadabea5e9276d0cb51ca391a0cf11b4">More...</a><br /></td></tr>
 <tr class="separator:abadabea5e9276d0cb51ca391a0cf11b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17671e02c4b0691055c980a8c44c784a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation_8h.html#a17671e02c4b0691055c980a8c44c784a">ChangeOperationIdOnList</a> (<a class="el" href="struct_operation_list.html">OperationList</a> *operationList, int olderId, int newId)</td></tr>
+<tr class="memdesc:a17671e02c4b0691055c980a8c44c784a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the id of an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, on a list  <a href="operation_8h.html#a17671e02c4b0691055c980a8c44c784a">More...</a><br /></td></tr>
+<tr class="separator:a17671e02c4b0691055c980a8c44c784a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a482954e58a1aa24c2a67b81bb6d92d9c"></a>
@@ -148,6 +151,53 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a17671e02c4b0691055c980a8c44c784a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17671e02c4b0691055c980a8c44c784a">&#9670;&nbsp;</a></span>ChangeOperationIdOnList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ChangeOperationIdOnList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_operation_list.html">OperationList</a> *&#160;</td>
+          <td class="paramname"><em>operationList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>olderId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>newId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the id of an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, on a list </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operationList</td><td></td></tr>
+    <tr><td class="paramname">olderId</td><td></td></tr>
+    <tr><td class="paramname">newId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00216">216</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
+
+</div>
+</div>
 <a id="af9b24abfebf95e9a84cd80cbcf1e876f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9b24abfebf95e9a84cd80cbcf1e876f">&#9670;&nbsp;</a></span>CreateOperation()</h2>
 
@@ -265,7 +315,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00158">158</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00161">161</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
 
 </div>
 </div>
@@ -287,7 +337,7 @@ Functions</h2></td></tr>
 
 <p>Prints values of an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00136">136</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00138">138</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
 
 </div>
 </div>
@@ -315,7 +365,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00145">145</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00147">147</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
 
 </div>
 </div>

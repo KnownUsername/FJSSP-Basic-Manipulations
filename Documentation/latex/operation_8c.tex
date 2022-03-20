@@ -20,10 +20,38 @@ void \mbox{\hyperlink{operation_8c_ae8d40df45204259b916dd2b5ca536e97}{Show\+Oper
 void \mbox{\hyperlink{operation_8c_acd0fcf1bbdbf64b06df0de37a37775a2}{Show\+Operation\+List}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List)
 \begin{DoxyCompactList}\small\item\em Prints values of operations on a list \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$ \mbox{\hyperlink{operation_8c_abadabea5e9276d0cb51ca391a0cf11b4}{Remove\+Operation}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int op\+Identifier)
-\begin{DoxyCompactList}\small\item\em Removes an operation from a list, given its identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes an operation from a list, given its identifier \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{operation_8c_a17671e02c4b0691055c980a8c44c784a}{Change\+Operation\+Id\+On\+List}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int older\+Id, int new\+Id)
+\begin{DoxyCompactList}\small\item\em Changes the id of an \mbox{\hyperlink{struct_operation}{Operation}}, on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{operation_8c_a17671e02c4b0691055c980a8c44c784a}\label{operation_8c_a17671e02c4b0691055c980a8c44c784a}} 
+\index{operation.c@{operation.c}!ChangeOperationIdOnList@{ChangeOperationIdOnList}}
+\index{ChangeOperationIdOnList@{ChangeOperationIdOnList}!operation.c@{operation.c}}
+\doxysubsubsection{\texorpdfstring{ChangeOperationIdOnList()}{ChangeOperationIdOnList()}}
+{\footnotesize\ttfamily int Change\+Operation\+Id\+On\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$}]{operation\+List,  }\item[{int}]{older\+Id,  }\item[{int}]{new\+Id }\end{DoxyParamCaption})}
+
+
+
+Changes the id of an \mbox{\hyperlink{struct_operation}{Operation}}, on a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\+List} & \\
+\hline
+{\em older\+Id} & \\
+\hline
+{\em new\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 216 of file operation.\+c.
+
 \mbox{\Hypertarget{operation_8c_af9b24abfebf95e9a84cd80cbcf1e876f}\label{operation_8c_af9b24abfebf95e9a84cd80cbcf1e876f}} 
 \index{operation.c@{operation.c}!CreateOperation@{CreateOperation}}
 \index{CreateOperation@{CreateOperation}!operation.c@{operation.c}}
@@ -142,7 +170,7 @@ Removes an operation from a list, given its identifier
 \end{DoxyReturn}
 
 
-Definition at line 158 of file operation.\+c.
+Definition at line 161 of file operation.\+c.
 
 \mbox{\Hypertarget{operation_8c_a32769da4e29a6b1be25e75404f307823}\label{operation_8c_a32769da4e29a6b1be25e75404f307823}} 
 \index{operation.c@{operation.c}!SearchOperation@{SearchOperation}}
@@ -180,7 +208,7 @@ Prints values of an \mbox{\hyperlink{struct_operation}{Operation}}
 
 
 
-Definition at line 136 of file operation.\+c.
+Definition at line 138 of file operation.\+c.
 
 \mbox{\Hypertarget{operation_8c_acd0fcf1bbdbf64b06df0de37a37775a2}\label{operation_8c_acd0fcf1bbdbf64b06df0de37a37775a2}} 
 \index{operation.c@{operation.c}!ShowOperationList@{ShowOperationList}}
@@ -199,5 +227,5 @@ Prints values of operations on a list
 \end{DoxyParams}
 
 
-Definition at line 145 of file operation.\+c.
+Definition at line 147 of file operation.\+c.
 
