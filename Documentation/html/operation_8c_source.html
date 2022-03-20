@@ -241,12 +241,13 @@ $(function() {
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="struct_operation_list.html">OperationList</a>* operation = <a class="code" href="operation_8c.html#a32769da4e29a6b1be25e75404f307823">SearchOperation</a>(operationList, olderId);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// If Operation not found, there&#39;s no id to change</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">if</span> (!operation) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Attribution of new value</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    operation-&gt;<a class="code" href="struct_operation_list.html#a3d4e46530b846439d68f2aa153d7a1b3">operation</a>.<a class="code" href="struct_operation.html#abce768143c798d46f8a117eaa5ec4879">opIdentifier</a> = newId;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// This may occur because of empty lists</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> (!operation) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// Attribution of new value</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    operation-&gt;<a class="code" href="struct_operation_list.html#a3d4e46530b846439d68f2aa153d7a1b3">operation</a>.<a class="code" href="struct_operation.html#abce768143c798d46f8a117eaa5ec4879">opIdentifier</a> = newId;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aprocess_8c_html_a8a773cd2d1ef50932f1e7d06d09b443a"><div class="ttname"><a href="process_8c.html#a8a773cd2d1ef50932f1e7d06d09b443a">DeleteProcessList</a></div><div class="ttdeci">void DeleteProcessList(ProcessList *processList)</div><div class="ttdoc">Deletes a list (= removes all elements on the list, leaving it empty) Recursive implementation</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00212">process.c:212</a></div></div>
 <div class="ttc" id="aoperation_8c_html_aacdbe31476969c0cfc789e16796deddf"><div class="ttname"><a href="operation_8c.html#aacdbe31476969c0cfc789e16796deddf">InsertOperation</a></div><div class="ttdeci">OperationList * InsertOperation(OperationList *operationList, Operation newOperation)</div><div class="ttdoc">Inserts a Operation on a list of Operations</div><div class="ttdef"><b>Definition:</b> <a href="operation_8c_source.html#l00093">operation.c:93</a></div></div>

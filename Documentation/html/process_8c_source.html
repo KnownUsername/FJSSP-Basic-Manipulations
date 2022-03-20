@@ -251,7 +251,7 @@ $(function() {
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// Get respective process, based on id</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <a class="code" href="struct_process_list.html">ProcessList</a>* foundProcess = <a class="code" href="process_8c.html#ac3772c66f770adde4e69453a92d9326b">SearchProcess</a>(processList, oldMachine);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// If Operation not found, there&#39;s no id to change</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// If Process not found, there&#39;s no machine to change</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// This may occur because of empty lists</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">if</span> (!foundProcess) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
@@ -260,6 +260,21 @@ $(function() {
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="process_8h.html#a202ff96838a15eff2b55d6dcb62c091a">  254</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="process_8c.html#a202ff96838a15eff2b55d6dcb62c091a">ChangeProcessTimeOnList</a>(<a class="code" href="struct_process_list.html">ProcessList</a>* processList, <span class="keywordtype">int</span> machine, <span class="keywordtype">int</span> newTime) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Get respective process, based on id</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="struct_process_list.html">ProcessList</a>* foundProcess = <a class="code" href="process_8c.html#ac3772c66f770adde4e69453a92d9326b">SearchProcess</a>(processList, machine);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// If Process not found, there&#39;s no machine to change</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// This may occur because of empty lists</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (!foundProcess) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Attribution of new value</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    foundProcess-&gt;<a class="code" href="struct_process_list.html#afd863a81383d428e30e0dddac1471288">process</a>.<a class="code" href="struct_process.html#a42715f65f02da52edc5b22021d8ae670">time</a> = newTime;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aprocess_8c_html_a1b241ddb7c969501b01055692b5ec3c7"><div class="ttname"><a href="process_8c.html#a1b241ddb7c969501b01055692b5ec3c7">ShowProcess</a></div><div class="ttdeci">void ShowProcess(Process process)</div><div class="ttdoc">Prints values of a Process</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00141">process.c:141</a></div></div>
 <div class="ttc" id="aprocess_8c_html_a8a773cd2d1ef50932f1e7d06d09b443a"><div class="ttname"><a href="process_8c.html#a8a773cd2d1ef50932f1e7d06d09b443a">DeleteProcessList</a></div><div class="ttdeci">void DeleteProcessList(ProcessList *processList)</div><div class="ttdoc">Deletes a list (= removes all elements on the list, leaving it empty) Recursive implementation</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00212">process.c:212</a></div></div>
@@ -272,6 +287,7 @@ $(function() {
 <div class="ttc" id="aprocess_8h_html"><div class="ttname"><a href="process_8h.html">process.h</a></div></div>
 <div class="ttc" id="astruct_process_html_a42715f65f02da52edc5b22021d8ae670"><div class="ttname"><a href="struct_process.html#a42715f65f02da52edc5b22021d8ae670">Process::time</a></div><div class="ttdeci">int time</div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00023">process.h:23</a></div></div>
 <div class="ttc" id="aprocess_8c_html_a48de4261659da2774cc4c2dcc16f6af9"><div class="ttname"><a href="process_8c.html#a48de4261659da2774cc4c2dcc16f6af9">CreateProcess</a></div><div class="ttdeci">Process CreateProcess(int machine, int time)</div><div class="ttdoc">Creates a Process with given values</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00023">process.c:23</a></div></div>
+<div class="ttc" id="aprocess_8c_html_a202ff96838a15eff2b55d6dcb62c091a"><div class="ttname"><a href="process_8c.html#a202ff96838a15eff2b55d6dcb62c091a">ChangeProcessTimeOnList</a></div><div class="ttdeci">int ChangeProcessTimeOnList(ProcessList *processList, int machine, int newTime)</div><div class="ttdoc">Changes the time of a Process of a machine, on a list</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00254">process.c:254</a></div></div>
 <div class="ttc" id="aprocess_8c_html_a5065d553fd66b0d47ff8353f30d97437"><div class="ttname"><a href="process_8c.html#a5065d553fd66b0d47ff8353f30d97437">ShowProcessList</a></div><div class="ttdeci">void ShowProcessList(ProcessList *processList)</div><div class="ttdoc">Shows values of processes on a list</div><div class="ttdef"><b>Definition:</b> <a href="process_8c_source.html#l00152">process.c:152</a></div></div>
 <div class="ttc" id="astruct_process_html_a6ac9453efcb58ad0e2a78ef0ee5db289"><div class="ttname"><a href="struct_process.html#a6ac9453efcb58ad0e2a78ef0ee5db289">Process::machine</a></div><div class="ttdeci">int machine</div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00022">process.h:22</a></div></div>
 <div class="ttc" id="astruct_process_list_html"><div class="ttname"><a href="struct_process_list.html">ProcessList</a></div><div class="ttdoc">Defines a list of Processes</div><div class="ttdef"><b>Definition:</b> <a href="process_8h_source.html#l00030">process.h:30</a></div></div>

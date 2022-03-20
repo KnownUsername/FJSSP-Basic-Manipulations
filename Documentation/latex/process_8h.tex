@@ -30,7 +30,9 @@ void \mbox{\hyperlink{process_8h_a5065d553fd66b0d47ff8353f30d97437}{Show\+Proces
 void \mbox{\hyperlink{process_8h_a8a773cd2d1ef50932f1e7d06d09b443a}{Delete\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
 \begin{DoxyCompactList}\small\item\em Deletes a list (= removes all elements on the list, leaving it empty) Recursive implementation \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{process_8h_ac3087b7876b6e91a163527cbd5a6cd8b}{Change\+Process\+Machine\+On\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int old\+Machine, int new\+Machine)
-\begin{DoxyCompactList}\small\item\em Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8h_a202ff96838a15eff2b55d6dcb62c091a}{Change\+Process\+Time\+On\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine, int new\+Time)
+\begin{DoxyCompactList}\small\item\em Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -82,6 +84,32 @@ Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list
 
 
 Definition at line 232 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_a202ff96838a15eff2b55d6dcb62c091a}\label{process_8h_a202ff96838a15eff2b55d6dcb62c091a}} 
+\index{process.h@{process.h}!ChangeProcessTimeOnList@{ChangeProcessTimeOnList}}
+\index{ChangeProcessTimeOnList@{ChangeProcessTimeOnList}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ChangeProcessTimeOnList()}{ChangeProcessTimeOnList()}}
+{\footnotesize\ttfamily int Change\+Process\+Time\+On\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
+
+
+
+Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, on a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+{\em new\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 254 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a48de4261659da2774cc4c2dcc16f6af9}\label{process_8h_a48de4261659da2774cc4c2dcc16f6af9}} 
 \index{process.h@{process.h}!CreateProcess@{CreateProcess}}
