@@ -66,7 +66,7 @@ int main() {
 	InsertOperation(operations, operation2);
 	InsertOperation(operations, operation3);
 
-
+	ChangeOperationIdOnList(operations, 2, 5);
 
 	// Removal of an operation
 	operations = RemoveOperation(operations, 3);
