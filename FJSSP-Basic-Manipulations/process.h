@@ -56,4 +56,6 @@ void DeleteProcessList(ProcessList* processList);
 // Changes the machine of a Process, on a list
 int ChangeProcessMachineOnList(ProcessList* processList, int oldMachine, int newMachine);
 
+// Changes the time of a Process of a machine, on a list
+int ChangeProcessTimeOnList(ProcessList* processList, int machine, int newTime);
 #endif

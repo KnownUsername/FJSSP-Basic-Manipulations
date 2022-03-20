@@ -234,12 +234,34 @@ int ChangeProcessMachineOnList(ProcessList* processList, int oldMachine, int new
 	// Get respective process, based on id
 	ProcessList* foundProcess = SearchProcess(processList, oldMachine);
 	
-	// If Operation not found, there's no id to change
+	// If Process not found, there's no machine to change
 	// This may occur because of empty lists
 	if (!foundProcess) return 0;
 
 	// Attribution of new value
 	foundProcess->process.machine = newMachine;
+
+	return 1;
+}
+
+/// <summary>
+/// Changes the time of a Process of a machine, on a list
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="machine"></param>
+/// <param name="newTime"></param>
+/// <returns></returns>
+int ChangeProcessTimeOnList(ProcessList* processList, int machine, int newTime) {
+
+	// Get respective process, based on id
+	ProcessList* foundProcess = SearchProcess(processList, machine);
+
+	// If Process not found, there's no machine to change
+	// This may occur because of empty lists
+	if (!foundProcess) return 0;
+
+	// Attribution of new value
+	foundProcess->process.time = newTime;
 
 	return 1;
 }
