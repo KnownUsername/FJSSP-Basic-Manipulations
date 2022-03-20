@@ -75,16 +75,8 @@ ProcessList* SearchProcess(ProcessList* processList, int machine) {
 /// <returns> 1 -> True | 0 -> False </returns>
 int ProcessExists(ProcessList* processList, int machine) {
 
-	// Run through process list
-	while (processList) {
-
-		// Compare machines' values
-		if (processList->process.machine == machine) return 1; // True
-
-		// Navigate to next process
-		processList = processList->nextProcess;
-
-	}
+	// Search for Process -> If found, it exists
+	if (SearchProcess(processList, machine)) return 1;
 
 	return 0; // False
 
