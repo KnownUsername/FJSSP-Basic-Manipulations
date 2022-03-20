@@ -46,6 +46,28 @@ ProcessList CreateProcessListElement(Process process) {
 }
 
 /// <summary>
+/// Searches a Process based on the id
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="machine"></param>
+/// <returns> Process pointer if found or NULL if not found </returns>
+ProcessList* SearchProcess(ProcessList* processList, int machine) {
+
+	// Run through Operation list
+	while (processList) {
+
+		// Compare opIdentifiers' values
+		if (processList->process.machine == machine) return processList; // Operation found
+
+		// Navigate to next Operation
+		processList = processList->nextProcess;
+
+	}
+
+	return NULL;
+}
+
+/// <summary>
 /// Verify if process exists on a list
 /// </summary>
 /// <param name="processList"></param>
@@ -72,8 +94,7 @@ int ProcessExists(ProcessList* processList, int machine) {
 /// Inserts a Process on a list of processes
 /// </summary>
 /// <param name="processList"></param>
-/// <param name="machine"></param>
-/// <param name="time"></param>
+/// <param name="newProcess"></param>
 /// <returns></returns>
 ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 	
@@ -123,7 +144,10 @@ ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 /// <summary>
 /// Prints values of a Process
 /// </summary>
+/// <param name="process"></param>
 void ShowProcess(Process process) {
+
+	// Display of each value of Process structure
 	printf("Machine: %d\n", process.machine);
 	printf("Time: %d\n\n", process.time);
 }
@@ -134,7 +158,11 @@ void ShowProcess(Process process) {
 /// <param name="processList"></param>
 void ShowProcessList(ProcessList* processList) {
 	while (processList) {
+
+		// Prints value of current Process
 		ShowProcess(processList->process);
+
+		// Pass to next element
 		processList = processList->nextProcess;
 	}
 }
@@ -190,8 +218,11 @@ void DeleteProcessList(ProcessList* processList) {
 
 	// Only free memory from existent elements
 	if (processList) {
+
 		// 'Iterate' till last element 
 		DeleteProcessList(processList->nextProcess);
+
+		// Free memory allocated from current Process
 		free(processList);
 	}
 }
