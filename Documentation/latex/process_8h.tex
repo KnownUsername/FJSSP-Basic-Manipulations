@@ -96,7 +96,7 @@ Deletes a list (= removes all elements on the list, leaving it empty) Recursive 
 \end{DoxyParams}
 
 
-Definition at line 189 of file process.\+c.
+Definition at line 209 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8h_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
 \index{process.h@{process.h}!InsertProcess@{InsertProcess}}
@@ -112,9 +112,7 @@ Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes
 \begin{DoxyParams}{Parameters}
 {\em process\+List} & \\
 \hline
-{\em machine} & \\
-\hline
-{\em time} & \\
+{\em new\+Process} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -122,7 +120,7 @@ Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes
 \end{DoxyReturn}
 
 
-Definition at line 78 of file process.\+c.
+Definition at line 91 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a0a45b151b9ebbf342843ed100822eabc}\label{process_8h_a0a45b151b9ebbf342843ed100822eabc}} 
 \index{process.h@{process.h}!RemoveProcess@{RemoveProcess}}
@@ -146,7 +144,7 @@ Removes a process from a list, given its using machine
 \end{DoxyReturn}
 
 
-Definition at line 148 of file process.\+c.
+Definition at line 168 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a1b241ddb7c969501b01055692b5ec3c7}\label{process_8h_a1b241ddb7c969501b01055692b5ec3c7}} 
 \index{process.h@{process.h}!ShowProcess@{ShowProcess}}
@@ -159,8 +157,13 @@ Definition at line 148 of file process.\+c.
 Prints values of a \mbox{\hyperlink{struct_process}{Process}} 
 
 
+\begin{DoxyParams}{Parameters}
+{\em process} & \\
+\hline
+\end{DoxyParams}
 
-Definition at line 126 of file process.\+c.
+
+Definition at line 140 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a5065d553fd66b0d47ff8353f30d97437}\label{process_8h_a5065d553fd66b0d47ff8353f30d97437}} 
 \index{process.h@{process.h}!ShowProcessList@{ShowProcessList}}
@@ -179,5 +182,5 @@ Shows values of processes on a list
 \end{DoxyParams}
 
 
-Definition at line 135 of file process.\+c.
+Definition at line 151 of file process.\+c.
 

@@ -85,6 +85,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a316b4b29891b00f2f9a279a3fb4dddd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_list.html">ProcessList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#a316b4b29891b00f2f9a279a3fb4dddd5">CreateProcessListElement</a> (<a class="el" href="struct_process.html">Process</a> process)</td></tr>
 <tr class="memdesc:a316b4b29891b00f2f9a279a3fb4dddd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="struct_process_list.html" title="Defines a list of Processes">ProcessList</a> 'element' with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a>  <a href="process_8c.html#a316b4b29891b00f2f9a279a3fb4dddd5">More...</a><br /></td></tr>
 <tr class="separator:a316b4b29891b00f2f9a279a3fb4dddd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3772c66f770adde4e69453a92d9326b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#ac3772c66f770adde4e69453a92d9326b">SearchProcess</a> (<a class="el" href="struct_process_list.html">ProcessList</a> *processList, int machine)</td></tr>
+<tr class="memdesc:ac3772c66f770adde4e69453a92d9326b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> based on the id  <a href="process_8c.html#ac3772c66f770adde4e69453a92d9326b">More...</a><br /></td></tr>
+<tr class="separator:ac3772c66f770adde4e69453a92d9326b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad312336d79e765456605370d73d60acc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="process_8c.html#ad312336d79e765456605370d73d60acc">ProcessExists</a> (<a class="el" href="struct_process_list.html">ProcessList</a> *processList, int machine)</td></tr>
 <tr class="memdesc:ad312336d79e765456605370d73d60acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify if process exists on a list  <a href="process_8c.html#ad312336d79e765456605370d73d60acc">More...</a><br /></td></tr>
 <tr class="separator:ad312336d79e765456605370d73d60acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +201,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00189">189</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00209">209</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>
@@ -232,14 +235,13 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">processList</td><td></td></tr>
-    <tr><td class="paramname">machine</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
+    <tr><td class="paramname">newProcess</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00078">78</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00091">91</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>
@@ -279,7 +281,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 -&gt; True | 0 -&gt; False </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00054">54</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00076">76</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>
@@ -319,7 +321,47 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00148">148</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00168">168</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+
+</div>
+</div>
+<a id="ac3772c66f770adde4e69453a92d9326b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3772c66f770adde4e69453a92d9326b">&#9670;&nbsp;</a></span>SearchProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_list.html">ProcessList</a>* SearchProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_list.html">ProcessList</a> *&#160;</td>
+          <td class="paramname"><em>processList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>machine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Searches a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> based on the id </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">processList</td><td></td></tr>
+    <tr><td class="paramname">machine</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_process.html" title="Defines 1 process">Process</a> pointer if found or NULL if not found </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00054">54</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>
@@ -340,8 +382,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints values of a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00126">126</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00140">140</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>
@@ -369,7 +417,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00135">135</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="process_8c_source.html#l00151">151</a> of file <a class="el" href="process_8c_source.html">process.c</a>.</p>
 
 </div>
 </div>

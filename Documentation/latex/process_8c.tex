@@ -9,6 +9,8 @@
 \begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{struct_process}{Process}} with given values \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_process_list}{Process\+List}} \mbox{\hyperlink{process_8c_a316b4b29891b00f2f9a279a3fb4dddd5}{Create\+Process\+List\+Element}} (\mbox{\hyperlink{struct_process}{Process}} process)
 \begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{struct_process_list}{Process\+List}} \textquotesingle{}element\textquotesingle{} with a \mbox{\hyperlink{struct_process}{Process}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_ac3772c66f770adde4e69453a92d9326b}{Search\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine)
+\begin{DoxyCompactList}\small\item\em Searches a \mbox{\hyperlink{struct_process}{Process}} based on the id \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{process_8c_ad312336d79e765456605370d73d60acc}{Process\+Exists}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine)
 \begin{DoxyCompactList}\small\item\em Verify if process exists on a list \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}{Insert\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, \mbox{\hyperlink{struct_process}{Process}} new\+Process)
@@ -87,7 +89,7 @@ Deletes a list (= removes all elements on the list, leaving it empty) Recursive 
 \end{DoxyParams}
 
 
-Definition at line 189 of file process.\+c.
+Definition at line 209 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
 \index{process.c@{process.c}!InsertProcess@{InsertProcess}}
@@ -103,9 +105,7 @@ Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes
 \begin{DoxyParams}{Parameters}
 {\em process\+List} & \\
 \hline
-{\em machine} & \\
-\hline
-{\em time} & \\
+{\em new\+Process} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -113,7 +113,7 @@ Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes
 \end{DoxyReturn}
 
 
-Definition at line 78 of file process.\+c.
+Definition at line 91 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ad312336d79e765456605370d73d60acc}\label{process_8c_ad312336d79e765456605370d73d60acc}} 
 \index{process.c@{process.c}!ProcessExists@{ProcessExists}}
@@ -137,7 +137,7 @@ Verify if process exists on a list
 \end{DoxyReturn}
 
 
-Definition at line 54 of file process.\+c.
+Definition at line 76 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a0a45b151b9ebbf342843ed100822eabc}\label{process_8c_a0a45b151b9ebbf342843ed100822eabc}} 
 \index{process.c@{process.c}!RemoveProcess@{RemoveProcess}}
@@ -161,7 +161,31 @@ Removes a process from a list, given its using machine
 \end{DoxyReturn}
 
 
-Definition at line 148 of file process.\+c.
+Definition at line 168 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_ac3772c66f770adde4e69453a92d9326b}\label{process_8c_ac3772c66f770adde4e69453a92d9326b}} 
+\index{process.c@{process.c}!SearchProcess@{SearchProcess}}
+\index{SearchProcess@{SearchProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{SearchProcess()}{SearchProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Search\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine }\end{DoxyParamCaption})}
+
+
+
+Searches a \mbox{\hyperlink{struct_process}{Process}} based on the id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_process}{Process}} pointer if found or N\+U\+LL if not found 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a1b241ddb7c969501b01055692b5ec3c7}\label{process_8c_a1b241ddb7c969501b01055692b5ec3c7}} 
 \index{process.c@{process.c}!ShowProcess@{ShowProcess}}
@@ -174,8 +198,13 @@ Definition at line 148 of file process.\+c.
 Prints values of a \mbox{\hyperlink{struct_process}{Process}} 
 
 
+\begin{DoxyParams}{Parameters}
+{\em process} & \\
+\hline
+\end{DoxyParams}
 
-Definition at line 126 of file process.\+c.
+
+Definition at line 140 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a5065d553fd66b0d47ff8353f30d97437}\label{process_8c_a5065d553fd66b0d47ff8353f30d97437}} 
 \index{process.c@{process.c}!ShowProcessList@{ShowProcessList}}
@@ -194,5 +223,5 @@ Shows values of processes on a list
 \end{DoxyParams}
 
 
-Definition at line 135 of file process.\+c.
+Definition at line 151 of file process.\+c.
 
