@@ -29,7 +29,9 @@ void \mbox{\hyperlink{operation_8h_acd0fcf1bbdbf64b06df0de37a37775a2}{Show\+Oper
 \mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$ \mbox{\hyperlink{operation_8h_abadabea5e9276d0cb51ca391a0cf11b4}{Remove\+Operation}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int op\+Identifier)
 \begin{DoxyCompactList}\small\item\em Removes an operation from a list, given its identifier \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{operation_8h_a17671e02c4b0691055c980a8c44c784a}{Change\+Operation\+Id\+On\+List}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int older\+Id, int new\+Id)
-\begin{DoxyCompactList}\small\item\em Changes the id of an \mbox{\hyperlink{struct_operation}{Operation}}, on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Changes the id of an \mbox{\hyperlink{struct_operation}{Operation}}, on a list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$ \mbox{\hyperlink{operation_8h_a32769da4e29a6b1be25e75404f307823}{Search\+Operation}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int op\+Identifier)
+\begin{DoxyCompactList}\small\item\em Searches an \mbox{\hyperlink{struct_operation}{Operation}} based on the id \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -155,6 +157,30 @@ Removes an operation from a list, given its identifier
 
 
 Definition at line 161 of file operation.\+c.
+
+\mbox{\Hypertarget{operation_8h_a32769da4e29a6b1be25e75404f307823}\label{operation_8h_a32769da4e29a6b1be25e75404f307823}} 
+\index{operation.h@{operation.h}!SearchOperation@{SearchOperation}}
+\index{SearchOperation@{SearchOperation}!operation.h@{operation.h}}
+\doxysubsubsection{\texorpdfstring{SearchOperation()}{SearchOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation_list}{Operation\+List}}$\ast$ Search\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$}]{operation\+List,  }\item[{int}]{op\+Identifier }\end{DoxyParamCaption})}
+
+
+
+Searches an \mbox{\hyperlink{struct_operation}{Operation}} based on the id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\+List} & \\
+\hline
+{\em op\+Identifier} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_operation}{Operation}} pointer if found or N\+U\+LL if not found 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file operation.\+c.
 
 \mbox{\Hypertarget{operation_8h_ae8d40df45204259b916dd2b5ca536e97}\label{operation_8h_ae8d40df45204259b916dd2b5ca536e97}} 
 \index{operation.h@{operation.h}!ShowOperation@{ShowOperation}}

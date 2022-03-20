@@ -116,6 +116,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a17671e02c4b0691055c980a8c44c784a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation_8h.html#a17671e02c4b0691055c980a8c44c784a">ChangeOperationIdOnList</a> (<a class="el" href="struct_operation_list.html">OperationList</a> *operationList, int olderId, int newId)</td></tr>
 <tr class="memdesc:a17671e02c4b0691055c980a8c44c784a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the id of an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, on a list  <a href="operation_8h.html#a17671e02c4b0691055c980a8c44c784a">More...</a><br /></td></tr>
 <tr class="separator:a17671e02c4b0691055c980a8c44c784a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32769da4e29a6b1be25e75404f307823"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operation_list.html">OperationList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operation_8h.html#a32769da4e29a6b1be25e75404f307823">SearchOperation</a> (<a class="el" href="struct_operation_list.html">OperationList</a> *operationList, int opIdentifier)</td></tr>
+<tr class="memdesc:a32769da4e29a6b1be25e75404f307823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a> based on the id  <a href="operation_8h.html#a32769da4e29a6b1be25e75404f307823">More...</a><br /></td></tr>
+<tr class="separator:a32769da4e29a6b1be25e75404f307823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a482954e58a1aa24c2a67b81bb6d92d9c"></a>
@@ -316,6 +319,46 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00161">161</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
+
+</div>
+</div>
+<a id="a32769da4e29a6b1be25e75404f307823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32769da4e29a6b1be25e75404f307823">&#9670;&nbsp;</a></span>SearchOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_operation_list.html">OperationList</a>* SearchOperation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_operation_list.html">OperationList</a> *&#160;</td>
+          <td class="paramname"><em>operationList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opIdentifier</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Searches an <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a> based on the id </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operationList</td><td></td></tr>
+    <tr><td class="paramname">opIdentifier</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a> pointer if found or NULL if not found </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operation_8c_source.html#l00054">54</a> of file <a class="el" href="operation_8c_source.html">operation.c</a>.</p>
 
 </div>
 </div>
