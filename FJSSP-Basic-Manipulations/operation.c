@@ -46,27 +46,42 @@ OperationList CreateOperationListElement(Operation Operation) {
 }
 
 /// <summary>
+/// Searches an Operation based on the id
+/// </summary>
+/// <param name="operationList"></param>
+/// <param name="opIdentifier"></param>
+/// <returns> Operation pointer if found or NULL if not found </returns>
+OperationList* SearchOperation(OperationList* operationList, int opIdentifier) {
+
+	// Run through Operation list
+	while (operationList) {
+
+		// Compare opIdentifiers' values
+		if (operationList->operation.opIdentifier == opIdentifier) return operationList; // Operation found
+
+		// Navigate to next Operation
+		operationList = operationList->nextOperation;
+
+	}
+
+	return NULL;
+}
+
+/// <summary>
 /// Verify if Operation exists on a list
 /// </summary>
 /// <param name="OperationList"></param>
 /// <param name="opIdentifier"></param>
 /// <returns> 1 -> True | 0 -> False </returns>
-int OperationExists(OperationList* OperationList, int opIdentifier) {
+int OperationExists(OperationList* operationList, int opIdentifier) {
 
-	// Run through Operation list
-	while (OperationList) {
-
-		// Compare opIdentifiers' values
-		if (OperationList->operation.opIdentifier == opIdentifier) return 1; // True
-
-		// Navigate to next Operation
-		OperationList = OperationList->nextOperation;
-
-	}
+	// Search for Operation -> If found, it exists
+	if (SearchOperation(operationList, opIdentifier)) return 1;
 
 	return 0; // False
 
 }
+
 
 /// <summary>
 /// Inserts a Operation on a list of Operations
