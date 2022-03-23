@@ -21,7 +21,7 @@
 /// Defines 1 job
 /// </summary>
 typedef struct Job {
-	int jobIdentifier; 
+	char* jobIdentifier; 
 	OperationList* operations; // List of operations to complete a job
 }Job;
 
@@ -32,5 +32,8 @@ typedef struct JobList {
 	Job job;
 	struct JobList* nextJob;
 }JobList;
+
+// Inserts values of 1 Job from a file
+Job ImportJob(char filename[]);
 
 #endif
