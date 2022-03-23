@@ -56,4 +56,6 @@ int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId
 // Searches an Operation based on the id
 OperationList* SearchOperation(OperationList* operationList, int opIdentifier);
 
+// Verify if Operation exists on a list
+int OperationExists(OperationList* operationList, int opIdentifier);
 #endif
