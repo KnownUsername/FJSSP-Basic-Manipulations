@@ -305,3 +305,31 @@ ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newPr
 	return oldProcessList;
 }
 
+/// <summary>
+/// Retrieves Process with less duration
+/// </summary>
+/// <param name="processList"></param>
+/// <returns></returns>
+ProcessList* GetMinimumDurationProcess(ProcessList* processList) {
+
+	// Minimum is initialized with 1st element from the list
+	ProcessList* minimumProcess = processList;
+
+	// Point to 2nd element, as 1st is already the starting point - no reason to compare with itself
+	processList = processList->nextProcess;
+
+	// Navigate through the list
+	while (processList) {
+
+		// Compare time values
+		if (processList->process.time < minimumProcess->process.time)
+			
+			// Change minimum to current Process, which has less time consumption
+			minimumProcess = processList;
+
+		// Go to next Process
+		processList = processList->nextProcess;
+	}
+
+	return minimumProcess;
+}
