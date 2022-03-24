@@ -17,6 +17,8 @@
 
 #include "process.h"
 
+#pragma region STRUCTS
+
 /// <summary>
 /// Defines 1 Operation
 /// </summary>
@@ -33,18 +35,17 @@ typedef struct OperationList {
 	struct OperationList* nextOperation;
 }OperationList;
 
+#pragma endregion
+
+#pragma region FUNCTIONS
+
+
+#pragma region CRUD
 // Inserts a Operation on a list of Operations
 OperationList* InsertOperation(OperationList* operationList, Operation newOperation);
 
 // Creates a Operation with given values
 Operation CreateOperation(int opIdentifier, ProcessList* processList);
-
-// Prints values of an Operation
-void ShowOperation(Operation operation);
-
-// Prints values of operations on a list
-void ShowOperationList(OperationList* operationList);
-
 
 // Removes an operation from a list, given its identifier
 OperationList* RemoveOperation(OperationList* operationList, int opIdentifier);
@@ -52,10 +53,24 @@ OperationList* RemoveOperation(OperationList* operationList, int opIdentifier);
 // Changes the id of an Operation, on a list
 int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId);
 
+#pragma endregion
+
+#pragma region PRINTS
+// Prints values of an Operation
+void ShowOperation(Operation operation);
+
+// Prints values of operations on a list
+void ShowOperationList(OperationList* operationList);
+
+#pragma endregion
+
 
 // Searches an Operation based on the id
 OperationList* SearchOperation(OperationList* operationList, int opIdentifier);
 
 // Verify if Operation exists on a list
 int OperationExists(OperationList* operationList, int opIdentifier);
+
+#pragma endregion
+
 #endif
