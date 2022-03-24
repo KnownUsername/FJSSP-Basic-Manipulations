@@ -35,17 +35,12 @@ typedef struct ProcessList {
 
 /*		Methods		*/
 
+#pragma region CRUD
 // Creates a Process with given values
 Process CreateProcess(int machine, int time);
 
 // Inserts a process on a process list
 ProcessList* InsertProcess(ProcessList* processList, Process newProcess);
-
-// Prints values of a Process
-void ShowProcess(Process process);
-
-// Shows values of processes on a list
-void ShowProcessList(ProcessList* processList);
 
 // Removes a process from a list, given its using machine
 ProcessList* RemoveProcess(ProcessList* processList, int machineID);
@@ -65,4 +60,18 @@ ProcessList* DuplicateProcessList(ProcessList* originalProcessList);
 // Deletes all Processes of a list, and inserts Processes from the other
 ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newProcessList);
 
+#pragma endregion
+
+#pragma region PRINTS
+
+// Prints values of a Process
+void ShowProcess(Process process);
+
+// Shows values of processes on a list
+void ShowProcessList(ProcessList* processList);
+
+#pragma endregion
+
+// Retrieves Process with less duration
+ProcessList* GetMinimumDurationProcess(ProcessList* processList);
 #endif
