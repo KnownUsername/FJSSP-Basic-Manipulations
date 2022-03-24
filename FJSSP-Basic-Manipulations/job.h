@@ -56,6 +56,9 @@ Job ImportJob(char filename[]);
 // Calculates the minimum duration for a job and its respective path
 JobProcess GetMinimumJobProcessLine(Job job);
 
+// Calculates the maximum duration for a job and its respective path
+JobProcess GetMaximumJobProcessLine(Job job);
+
 #pragma endregion
 
 #endif

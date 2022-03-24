@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fullduration_93',['fullDuration',['../struct_job_process.html#a67c7f80f31f84fe0e6f2011b93e5d476',1,'JobProcess']]]
+  ['fullduration_95',['fullDuration',['../struct_job_process.html#a67c7f80f31f84fe0e6f2011b93e5d476',1,'JobProcess']]]
 ];

@@ -52,11 +52,6 @@ int main() {
 	InsertProcess(processList2, CreateProcess(3, 7));
 	InsertProcess(processList2, CreateProcess(4, 2));
 
-	ShowProcessList(processList2);
-	Process higherTimeProcess = GetMaximumDurationProcess(processList2);
-	ShowProcess(higherTimeProcess);
-
-
 	Operation operation2 = CreateOperation(2, processList2);
 
 	/*			Operation 3			*/
@@ -92,12 +87,12 @@ int main() {
 	job.operations = operations;
 
 	JobProcess jp;
-	jp = GetMinimumJobProcessLine(job);
+	jp = GetMaximumJobProcessLine(job);
 
 	printf(" \t\t >> Operations\n\n");
 	ShowOperationList(operations);
 
-	printf("\n\n \t\t >> Efficient Processes « \n\n");
+	printf("\n\n \t\t >> High Time Processes « \n\n");
 	printf("Duration: %d\n\n", jp.fullDuration);
 	ShowOperationList(jp.job.operations);
 	//ImportJob("one_job.csv");

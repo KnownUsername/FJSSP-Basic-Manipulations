@@ -9,10 +9,34 @@
 \mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8c_a883cfbef556e6354faecbc3d64dbd188}{Import\+Job}} (char filename\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8c_ae96f33b58305738f5cdc58c67fd73575}{Get\+Minimum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
-\begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8c_a24762f3a4eb2b63f2c0eb3253a37225c}{Get\+Maximum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Calculates the maximum duration for a job and its respective path Path is defined by the set of Processes with higher duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{job_8c_a24762f3a4eb2b63f2c0eb3253a37225c}\label{job_8c_a24762f3a4eb2b63f2c0eb3253a37225c}} 
+\index{job.c@{job.c}!GetMaximumJobProcessLine@{GetMaximumJobProcessLine}}
+\index{GetMaximumJobProcessLine@{GetMaximumJobProcessLine}!job.c@{job.c}}
+\doxysubsubsection{\texorpdfstring{GetMaximumJobProcessLine()}{GetMaximumJobProcessLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job_process}{Job\+Process}} Get\+Maximum\+Job\+Process\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Calculates the maximum duration for a job and its respective path Path is defined by the set of Processes with higher duration on each \mbox{\hyperlink{struct_operation}{Operation}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 114 of file job.\+c.
+
 \mbox{\Hypertarget{job_8c_ae96f33b58305738f5cdc58c67fd73575}\label{job_8c_ae96f33b58305738f5cdc58c67fd73575}} 
 \index{job.c@{job.c}!GetMinimumJobProcessLine@{GetMinimumJobProcessLine}}
 \index{GetMinimumJobProcessLine@{GetMinimumJobProcessLine}!job.c@{job.c}}

@@ -104,3 +104,44 @@ JobProcess GetMinimumJobProcessLine(Job job) {
 
     return jobProcess;
 }
+
+/// <summary>
+/// Calculates the maximum duration for a job and its respective path
+/// Path is defined by the set of Processes with higher duration on each Operation
+/// </summary>
+/// <param name="job"></param>
+/// <returns></returns>
+JobProcess GetMaximumJobProcessLine(Job job) {
+    JobProcess jobProcess;
+
+               /*      Initializations         */
+    jobProcess.fullDuration = 0;
+    jobProcess.job.jobIdentifier = job.jobIdentifier;
+    jobProcess.job.operations = (OperationList*)malloc(sizeof(Operation));
+    jobProcess.job.operations = NULL;
+
+    // Pointer to a copy of the Process with minimum time on each Operation
+    ProcessList* minimumTimeProcess = (ProcessList*)malloc(sizeof(ProcessList));
+    minimumTimeProcess->nextProcess = NULL;
+
+
+    // Cycle through operations
+    while (job.operations) {
+
+        // Get Process with minimal duration
+        minimumTimeProcess->process = GetMaximumDurationProcess(job.operations->operation.alternProcesses);
+
+
+        // Insert new Operation with respective Process with minimum time consumption
+        jobProcess.job.operations = InsertOperation(jobProcess.job.operations, CreateOperation(job.operations->operation.opIdentifier, minimumTimeProcess));
+
+        // Add duration from Process with less time of current operation
+        jobProcess.fullDuration += minimumTimeProcess->process.time;
+
+
+        // Go to next Operation
+        job.operations = job.operations->nextOperation;
+    }
+
+    return jobProcess;
+}
