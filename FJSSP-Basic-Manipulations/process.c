@@ -334,3 +334,32 @@ Process GetMinimumDurationProcess(ProcessList* processList) {
 
 	return minimumProcess;
 }
+
+/// <summary>
+/// Retrieves Process with higher duration
+/// </summary>
+/// <param name="processList"></param>
+/// <returns></returns>
+Process GetMaximumDurationProcess(ProcessList* processList) {
+
+	// Maximum is initialized with 1st element from the list
+	Process maximumProcess = processList->process;
+
+	// Point to 2nd element, as 1st is already the starting point - no reason to compare with itself
+	processList = processList->nextProcess;
+
+	// Navigate through the list
+	while (processList) {
+
+		// Compare time values
+		if (processList->process.time > maximumProcess.time)
+
+			// Change maximum to current Process, which has higher time consumption
+			maximumProcess = processList->process;
+
+		// Go to next Process
+		processList = processList->nextProcess;
+	}
+
+	return maximumProcess;
+}

@@ -54,13 +54,14 @@ int ChangeProcessMachineOnList(ProcessList* processList, int oldMachine, int new
 // Changes the time of a Process of a machine, on a list
 int ChangeProcessTimeOnList(ProcessList* processList, int machine, int newTime);
 
-// Duplicates a Process list
-ProcessList* DuplicateProcessList(ProcessList* originalProcessList);
-
 // Deletes all Processes of a list, and inserts Processes from the other
 ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newProcessList);
 
 #pragma endregion
+
+// Duplicates a Process list
+ProcessList* DuplicateProcessList(ProcessList* originalProcessList);
+
 
 #pragma region PRINTS
 
@@ -74,4 +75,8 @@ void ShowProcessList(ProcessList* processList);
 
 // Retrieves Process with less duration
 Process GetMinimumDurationProcess(ProcessList* processList);
+
+// Retrieves Process with higher duration
+Process GetMaximumDurationProcess(ProcessList* processList);
+
 #endif

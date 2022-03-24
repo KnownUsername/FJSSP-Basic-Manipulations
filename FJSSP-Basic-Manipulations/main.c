@@ -52,6 +52,11 @@ int main() {
 	InsertProcess(processList2, CreateProcess(3, 7));
 	InsertProcess(processList2, CreateProcess(4, 2));
 
+	ShowProcessList(processList2);
+	Process higherTimeProcess = GetMaximumDurationProcess(processList2);
+	ShowProcess(higherTimeProcess);
+
+
 	Operation operation2 = CreateOperation(2, processList2);
 
 	/*			Operation 3			*/
