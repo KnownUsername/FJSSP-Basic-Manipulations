@@ -68,7 +68,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">job.h File Reference</div>  </div>
 </div><!--header-->
@@ -85,6 +86,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_list.html">JobList</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a list of jobs  <a href="struct_job_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_process.html">JobProcess</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> established for each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, instead of having all possibilities.  <a href="struct_job_process.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -94,6 +98,18 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a4ac74eed849891959c7beaed85acdc33"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_job_list.html">JobList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="job_8h.html#a4ac74eed849891959c7beaed85acdc33">JobList</a></td></tr>
 <tr class="memdesc:a4ac74eed849891959c7beaed85acdc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a list of jobs  <a href="job_8h.html#a4ac74eed849891959c7beaed85acdc33">More...</a><br /></td></tr>
 <tr class="separator:a4ac74eed849891959c7beaed85acdc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d207c009b1d16f95253a10929b061bc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_job_process.html">JobProcess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="job_8h.html#a1d207c009b1d16f95253a10929b061bc">JobProcess</a></td></tr>
+<tr class="memdesc:a1d207c009b1d16f95253a10929b061bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> established for each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, instead of having all possibilities.  <a href="job_8h.html#a1d207c009b1d16f95253a10929b061bc">More...</a><br /></td></tr>
+<tr class="separator:a1d207c009b1d16f95253a10929b061bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a883cfbef556e6354faecbc3d64dbd188"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job.html">Job</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="job_8h.html#a883cfbef556e6354faecbc3d64dbd188">ImportJob</a> (char filename[])</td></tr>
+<tr class="memdesc:a883cfbef556e6354faecbc3d64dbd188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts values of 1 <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> from a file  <a href="job_8h.html#a883cfbef556e6354faecbc3d64dbd188">More...</a><br /></td></tr>
+<tr class="separator:a883cfbef556e6354faecbc3d64dbd188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96f33b58305738f5cdc58c67fd73575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job_process.html">JobProcess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="job_8h.html#ae96f33b58305738f5cdc58c67fd73575">GetMinimumJobProcessLine</a> (<a class="el" href="struct_job.html">Job</a> job)</td></tr>
+<tr class="memdesc:ae96f33b58305738f5cdc58c67fd73575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>  <a href="job_8h.html#ae96f33b58305738f5cdc58c67fd73575">More...</a><br /></td></tr>
+<tr class="separator:ae96f33b58305738f5cdc58c67fd73575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a7f678ed7503a7b4211821d14323751d8"></a>
@@ -125,6 +141,82 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Defines a list of jobs </p>
+
+</div>
+</div>
+<a id="a1d207c009b1d16f95253a10929b061bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d207c009b1d16f95253a10929b061bc">&#9670;&nbsp;</a></span>JobProcess</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_job_process.html">JobProcess</a> <a class="el" href="struct_job_process.html">JobProcess</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defines a <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> established for each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, instead of having all possibilities. </p>
+<p>It's also added the full duration of the <a class="el" href="struct_job.html" title="Defines 1 job">Job</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae96f33b58305738f5cdc58c67fd73575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96f33b58305738f5cdc58c67fd73575">&#9670;&nbsp;</a></span>GetMinimumJobProcessLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_job_process.html">JobProcess</a> GetMinimumJobProcessLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_job.html">Job</a>&#160;</td>
+          <td class="paramname"><em>job</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">job</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="job_8c_source.html#l00076">76</a> of file <a class="el" href="job_8c_source.html">job.c</a>.</p>
+
+</div>
+</div>
+<a id="a883cfbef556e6354faecbc3d64dbd188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a883cfbef556e6354faecbc3d64dbd188">&#9670;&nbsp;</a></span>ImportJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_job.html">Job</a> ImportJob </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>filename</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts values of 1 <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> from a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="job_8c_source.html#l00011">11</a> of file <a class="el" href="job_8c_source.html">job.c</a>.</p>
 
 </div>
 </div>

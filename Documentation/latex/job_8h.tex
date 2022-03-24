@@ -7,14 +7,25 @@
 struct \mbox{\hyperlink{struct_job}{Job}}
 \begin{DoxyCompactList}\small\item\em Defines 1 job \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_job_list}{Job\+List}}
-\begin{DoxyCompactList}\small\item\em Defines a list of jobs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines a list of jobs \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_job_process}{Job\+Process}}
+\begin{DoxyCompactList}\small\item\em Defines a \mbox{\hyperlink{struct_job}{Job}} with a \mbox{\hyperlink{struct_process}{Process}} established for each \mbox{\hyperlink{struct_operation}{Operation}}, instead of having all possibilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8h_a7f678ed7503a7b4211821d14323751d8}{Job}}
 \begin{DoxyCompactList}\small\item\em Defines 1 job \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{struct_job_list}{Job\+List}} \mbox{\hyperlink{job_8h_a4ac74eed849891959c7beaed85acdc33}{Job\+List}}
-\begin{DoxyCompactList}\small\item\em Defines a list of jobs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines a list of jobs \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_a1d207c009b1d16f95253a10929b061bc}{Job\+Process}}
+\begin{DoxyCompactList}\small\item\em Defines a \mbox{\hyperlink{struct_job}{Job}} with a \mbox{\hyperlink{struct_process}{Process}} established for each \mbox{\hyperlink{struct_operation}{Operation}}, instead of having all possibilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8h_a883cfbef556e6354faecbc3d64dbd188}{Import\+Job}} (char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_ae96f33b58305738f5cdc58c67fd73575}{Get\+Minimum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -37,4 +48,61 @@ Defines 1 job
 
 
 Defines a list of jobs 
+
+\mbox{\Hypertarget{job_8h_a1d207c009b1d16f95253a10929b061bc}\label{job_8h_a1d207c009b1d16f95253a10929b061bc}} 
+\index{job.h@{job.h}!JobProcess@{JobProcess}}
+\index{JobProcess@{JobProcess}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{JobProcess}{JobProcess}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{struct_job_process}{Job\+Process}}}
+
+
+
+Defines a \mbox{\hyperlink{struct_job}{Job}} with a \mbox{\hyperlink{struct_process}{Process}} established for each \mbox{\hyperlink{struct_operation}{Operation}}, instead of having all possibilities. 
+
+It\textquotesingle{}s also added the full duration of the \mbox{\hyperlink{struct_job}{Job}}.
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{job_8h_ae96f33b58305738f5cdc58c67fd73575}\label{job_8h_ae96f33b58305738f5cdc58c67fd73575}} 
+\index{job.h@{job.h}!GetMinimumJobProcessLine@{GetMinimumJobProcessLine}}
+\index{GetMinimumJobProcessLine@{GetMinimumJobProcessLine}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{GetMinimumJobProcessLine()}{GetMinimumJobProcessLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job_process}{Job\+Process}} Get\+Minimum\+Job\+Process\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 76 of file job.\+c.
+
+\mbox{\Hypertarget{job_8h_a883cfbef556e6354faecbc3d64dbd188}\label{job_8h_a883cfbef556e6354faecbc3d64dbd188}} 
+\index{job.h@{job.h}!ImportJob@{ImportJob}}
+\index{ImportJob@{ImportJob}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{ImportJob()}{ImportJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} Import\+Job (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 11 of file job.\+c.
 

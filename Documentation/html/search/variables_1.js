@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['job_80',['job',['../struct_job_list.html#a6f877dd869f35a0465039c54009f32d7',1,'JobList']]],
-  ['jobidentifier_81',['jobIdentifier',['../struct_job.html#a635ac8d3ff72b61435f6c545cbbd5438',1,'Job']]]
+  ['fullduration_91',['fullDuration',['../struct_job_process.html#a67c7f80f31f84fe0e6f2011b93e5d476',1,'JobProcess']]]
 ];

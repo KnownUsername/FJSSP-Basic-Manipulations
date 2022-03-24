@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processexists_69',['ProcessExists',['../process_8c.html#ad312336d79e765456605370d73d60acc',1,'process.c']]]
+  ['operationexists_79',['OperationExists',['../operation_8c.html#aa4d242826bfd6bb5e54e661d4e59d9c6',1,'OperationExists(OperationList *operationList, int opIdentifier):&#160;operation.c'],['../operation_8h.html#aa4d242826bfd6bb5e54e661d4e59d9c6',1,'OperationExists(OperationList *operationList, int opIdentifier):&#160;operation.c']]]
 ];

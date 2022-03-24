@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['removeoperation_34',['RemoveOperation',['../operation_8c.html#abadabea5e9276d0cb51ca391a0cf11b4',1,'RemoveOperation(OperationList *operationList, int opIdentifier):&#160;operation.c'],['../operation_8h.html#abadabea5e9276d0cb51ca391a0cf11b4',1,'RemoveOperation(OperationList *operationList, int opIdentifier):&#160;operation.c']]],
-  ['removeprocess_35',['RemoveProcess',['../process_8c.html#a0a45b151b9ebbf342843ed100822eabc',1,'RemoveProcess(ProcessList *processList, int machineID):&#160;process.c'],['../process_8h.html#a0a45b151b9ebbf342843ed100822eabc',1,'RemoveProcess(ProcessList *processList, int machineID):&#160;process.c']]],
-  ['replaceallprocesses_36',['ReplaceAllProcesses',['../process_8c.html#a08744ebe03d98b1086658282eac1c59f',1,'ReplaceAllProcesses(ProcessList *oldProcessList, ProcessList *newProcessList):&#160;process.c'],['../process_8h.html#a08744ebe03d98b1086658282eac1c59f',1,'ReplaceAllProcesses(ProcessList *oldProcessList, ProcessList *newProcessList):&#160;process.c']]]
+  ['operation_28',['Operation',['../struct_operation.html',1,'Operation'],['../struct_operation_list.html#a3d4e46530b846439d68f2aa153d7a1b3',1,'OperationList::operation()'],['../operation_8h.html#a482954e58a1aa24c2a67b81bb6d92d9c',1,'Operation():&#160;operation.h']]],
+  ['operation_2ec_29',['operation.c',['../operation_8c.html',1,'']]],
+  ['operation_2eh_30',['operation.h',['../operation_8h.html',1,'']]],
+  ['operationexists_31',['OperationExists',['../operation_8c.html#aa4d242826bfd6bb5e54e661d4e59d9c6',1,'OperationExists(OperationList *operationList, int opIdentifier):&#160;operation.c'],['../operation_8h.html#aa4d242826bfd6bb5e54e661d4e59d9c6',1,'OperationExists(OperationList *operationList, int opIdentifier):&#160;operation.c']]],
+  ['operationlist_32',['OperationList',['../struct_operation_list.html',1,'OperationList'],['../operation_8h.html#afd2693dc6ca3a12ddd7da0af63db2ebc',1,'OperationList():&#160;operation.h']]],
+  ['operations_33',['operations',['../struct_job.html#ab224961d33e052e0d28dd5e3ae5f953e',1,'Job']]],
+  ['opidentifier_34',['opIdentifier',['../struct_operation.html#abce768143c798d46f8a117eaa5ec4879',1,'Operation']]]
 ];

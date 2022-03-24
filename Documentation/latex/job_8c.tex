@@ -1,0 +1,59 @@
+\hypertarget{job_8c}{}\doxysection{F\+J\+S\+S\+P-\/\+Basic-\/\+Manipulations/job.c File Reference}
+\label{job_8c}\index{FJSSP-\/Basic-\/Manipulations/job.c@{FJSSP-\/Basic-\/Manipulations/job.c}}
+{\ttfamily \#include \char`\"{}job.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8c_a883cfbef556e6354faecbc3d64dbd188}{Import\+Job}} (char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8c_ae96f33b58305738f5cdc58c67fd73575}{Get\+Minimum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{job_8c_ae96f33b58305738f5cdc58c67fd73575}\label{job_8c_ae96f33b58305738f5cdc58c67fd73575}} 
+\index{job.c@{job.c}!GetMinimumJobProcessLine@{GetMinimumJobProcessLine}}
+\index{GetMinimumJobProcessLine@{GetMinimumJobProcessLine}!job.c@{job.c}}
+\doxysubsubsection{\texorpdfstring{GetMinimumJobProcessLine()}{GetMinimumJobProcessLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job_process}{Job\+Process}} Get\+Minimum\+Job\+Process\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 76 of file job.\+c.
+
+\mbox{\Hypertarget{job_8c_a883cfbef556e6354faecbc3d64dbd188}\label{job_8c_a883cfbef556e6354faecbc3d64dbd188}} 
+\index{job.c@{job.c}!ImportJob@{ImportJob}}
+\index{ImportJob@{ImportJob}!job.c@{job.c}}
+\doxysubsubsection{\texorpdfstring{ImportJob()}{ImportJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} Import\+Job (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 11 of file job.\+c.
+

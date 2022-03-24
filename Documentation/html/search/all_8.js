@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['process_29',['Process',['../struct_process.html',1,'Process'],['../struct_process_list.html#afd863a81383d428e30e0dddac1471288',1,'ProcessList::process()'],['../process_8h.html#a3b5b0413545e0d4ff600b0a7203e3086',1,'Process():&#160;process.h']]],
-  ['process_2ec_30',['process.c',['../process_8c.html',1,'']]],
-  ['process_2eh_31',['process.h',['../process_8h.html',1,'']]],
-  ['processexists_32',['ProcessExists',['../process_8c.html#ad312336d79e765456605370d73d60acc',1,'process.c']]],
-  ['processlist_33',['ProcessList',['../struct_process_list.html',1,'ProcessList'],['../process_8h.html#a63f189476623ef5829809ab680007468',1,'ProcessList():&#160;process.h']]]
+  ['nextjob_25',['nextJob',['../struct_job_list.html#a82e4758c41aff171c02f2b94b46144a0',1,'JobList']]],
+  ['nextoperation_26',['nextOperation',['../struct_operation_list.html#a398280e75fba3bc439c46207c866fd65',1,'OperationList']]],
+  ['nextprocess_27',['nextProcess',['../struct_process_list.html#a6b5e9bd5585255c885abf5ed21b6514d',1,'ProcessList']]]
 ];

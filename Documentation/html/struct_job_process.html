@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FJSSP-Basic-Manipulations: Job Struct Reference</title>
+<title>FJSSP-Basic-Manipulations: JobProcess Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,56 +65,57 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Job Struct Reference</div>  </div>
+<div class="title">JobProcess Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Defines 1 job  
- <a href="struct_job.html#details">More...</a></p>
+<p>Defines a <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> established for each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, instead of having all possibilities.  
+ <a href="struct_job_process.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="job_8h_source.html">job.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aca17c52260d63a0a9d890c4b7b613958"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job.html#aca17c52260d63a0a9d890c4b7b613958">jobIdentifier</a></td></tr>
-<tr class="separator:aca17c52260d63a0a9d890c4b7b613958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab224961d33e052e0d28dd5e3ae5f953e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operation_list.html">OperationList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job.html#ab224961d33e052e0d28dd5e3ae5f953e">operations</a></td></tr>
-<tr class="separator:ab224961d33e052e0d28dd5e3ae5f953e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f877dd869f35a0465039c54009f32d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job.html">Job</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_process.html#a6f877dd869f35a0465039c54009f32d7">job</a></td></tr>
+<tr class="separator:a6f877dd869f35a0465039c54009f32d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67c7f80f31f84fe0e6f2011b93e5d476"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_process.html#a67c7f80f31f84fe0e6f2011b93e5d476">fullDuration</a></td></tr>
+<tr class="separator:a67c7f80f31f84fe0e6f2011b93e5d476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Defines 1 job </p>
+<div class="textblock"><p>Defines a <a class="el" href="struct_job.html" title="Defines 1 job">Job</a> with a <a class="el" href="struct_process.html" title="Defines 1 process">Process</a> established for each <a class="el" href="struct_operation.html" title="Defines 1 Operation">Operation</a>, instead of having all possibilities. </p>
+<p>It's also added the full duration of the <a class="el" href="struct_job.html" title="Defines 1 job">Job</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00025">25</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00044">44</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="aca17c52260d63a0a9d890c4b7b613958"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca17c52260d63a0a9d890c4b7b613958">&#9670;&nbsp;</a></span>jobIdentifier</h2>
+<a id="a67c7f80f31f84fe0e6f2011b93e5d476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67c7f80f31f84fe0e6f2011b93e5d476">&#9670;&nbsp;</a></span>fullDuration</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* jobIdentifier</td>
+          <td class="memname">int fullDuration</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00026">26</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00046">46</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
 
 </div>
 </div>
-<a id="ab224961d33e052e0d28dd5e3ae5f953e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab224961d33e052e0d28dd5e3ae5f953e">&#9670;&nbsp;</a></span>operations</h2>
+<a id="a6f877dd869f35a0465039c54009f32d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f877dd869f35a0465039c54009f32d7">&#9670;&nbsp;</a></span>job</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_operation_list.html">OperationList</a>* operations</td>
+          <td class="memname"><a class="el" href="struct_job.html">Job</a> job</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00027">27</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="job_8h_source.html#l00045">45</a> of file <a class="el" href="job_8h_source.html">job.h</a>.</p>
 
 </div>
 </div>

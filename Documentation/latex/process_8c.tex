@@ -30,7 +30,9 @@ int \mbox{\hyperlink{process_8c_a202ff96838a15eff2b55d6dcb62c091a}{Change\+Proce
 \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}{Duplicate\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$original\+Process\+List)
 \begin{DoxyCompactList}\small\item\em Duplicates a \mbox{\hyperlink{struct_process}{Process}} list \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8c_a08744ebe03d98b1086658282eac1c59f}{Replace\+All\+Processes}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$old\+Process\+List, \mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$new\+Process\+List)
-\begin{DoxyCompactList}\small\item\em Deletes all Processes of a list, and inserts Processes from the other \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deletes all Processes of a list, and inserts Processes from the other \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \mbox{\hyperlink{process_8c_aeb7ee3aff667ece420d934239094673c}{Get\+Minimum\+Duration\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
+\begin{DoxyCompactList}\small\item\em Retrieves \mbox{\hyperlink{struct_process}{Process}} with less duration \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -58,7 +60,7 @@ Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list
 \end{DoxyReturn}
 
 
-Definition at line 232 of file process.\+c.
+Definition at line 233 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a202ff96838a15eff2b55d6dcb62c091a}\label{process_8c_a202ff96838a15eff2b55d6dcb62c091a}} 
 \index{process.c@{process.c}!ChangeProcessTimeOnList@{ChangeProcessTimeOnList}}
@@ -84,7 +86,7 @@ Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, o
 \end{DoxyReturn}
 
 
-Definition at line 254 of file process.\+c.
+Definition at line 255 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a48de4261659da2774cc4c2dcc16f6af9}\label{process_8c_a48de4261659da2774cc4c2dcc16f6af9}} 
 \index{process.c@{process.c}!CreateProcess@{CreateProcess}}
@@ -149,7 +151,7 @@ Deletes a list (= removes all elements on the list, leaving it empty) Recursive 
 \end{DoxyParams}
 
 
-Definition at line 212 of file process.\+c.
+Definition at line 213 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}\label{process_8c_a31562a1de36cdee103c9cf2e4cbb97dd}} 
 \index{process.c@{process.c}!DuplicateProcessList@{DuplicateProcessList}}
@@ -171,7 +173,29 @@ Duplicates a \mbox{\hyperlink{struct_process}{Process}} list
 \end{DoxyReturn}
 
 
-Definition at line 274 of file process.\+c.
+Definition at line 275 of file process.\+c.
+
+\mbox{\Hypertarget{process_8c_aeb7ee3aff667ece420d934239094673c}\label{process_8c_aeb7ee3aff667ece420d934239094673c}} 
+\index{process.c@{process.c}!GetMinimumDurationProcess@{GetMinimumDurationProcess}}
+\index{GetMinimumDurationProcess@{GetMinimumDurationProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{GetMinimumDurationProcess()}{GetMinimumDurationProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process}{Process}} Get\+Minimum\+Duration\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List }\end{DoxyParamCaption})}
+
+
+
+Retrieves \mbox{\hyperlink{struct_process}{Process}} with less duration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 314 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8c_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
 \index{process.c@{process.c}!InsertProcess@{InsertProcess}}
@@ -243,7 +267,7 @@ Removes a process from a list, given its using machine
 \end{DoxyReturn}
 
 
-Definition at line 171 of file process.\+c.
+Definition at line 172 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_a08744ebe03d98b1086658282eac1c59f}\label{process_8c_a08744ebe03d98b1086658282eac1c59f}} 
 \index{process.c@{process.c}!ReplaceAllProcesses@{ReplaceAllProcesses}}
@@ -267,7 +291,7 @@ Deletes all Processes of a list, and inserts Processes from the other
 \end{DoxyReturn}
 
 
-Definition at line 297 of file process.\+c.
+Definition at line 298 of file process.\+c.
 
 \mbox{\Hypertarget{process_8c_ac3772c66f770adde4e69453a92d9326b}\label{process_8c_ac3772c66f770adde4e69453a92d9326b}} 
 \index{process.c@{process.c}!SearchProcess@{SearchProcess}}

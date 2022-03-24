@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['insertoperation_65',['InsertOperation',['../operation_8c.html#aacdbe31476969c0cfc789e16796deddf',1,'InsertOperation(OperationList *operationList, Operation newOperation):&#160;operation.c'],['../operation_8h.html#aacdbe31476969c0cfc789e16796deddf',1,'InsertOperation(OperationList *operationList, Operation newOperation):&#160;operation.c']]],
-  ['insertprocess_66',['InsertProcess',['../process_8c.html#ad6cf09edf0587e66f4a7d80b03a9ec9d',1,'InsertProcess(ProcessList *processList, Process newProcess):&#160;process.c'],['../process_8h.html#ad6cf09edf0587e66f4a7d80b03a9ec9d',1,'InsertProcess(ProcessList *processList, Process newProcess):&#160;process.c']]]
+  ['getminimumdurationprocess_73',['GetMinimumDurationProcess',['../process_8c.html#aeb7ee3aff667ece420d934239094673c',1,'GetMinimumDurationProcess(ProcessList *processList):&#160;process.c'],['../process_8h.html#aeb7ee3aff667ece420d934239094673c',1,'GetMinimumDurationProcess(ProcessList *processList):&#160;process.c']]],
+  ['getminimumjobprocessline_74',['GetMinimumJobProcessLine',['../job_8c.html#ae96f33b58305738f5cdc58c67fd73575',1,'GetMinimumJobProcessLine(Job job):&#160;job.c'],['../job_8h.html#ae96f33b58305738f5cdc58c67fd73575',1,'GetMinimumJobProcessLine(Job job):&#160;job.c']]]
 ];
