@@ -158,6 +158,7 @@ void ShowProcessList(ProcessList* processList) {
 		// Pass to next element
 		processList = processList->nextProcess;
 	}
+	puts("");
 }
 
 #pragma endregion
@@ -310,10 +311,10 @@ ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newPr
 /// </summary>
 /// <param name="processList"></param>
 /// <returns></returns>
-ProcessList* GetMinimumDurationProcess(ProcessList* processList) {
+Process GetMinimumDurationProcess(ProcessList* processList) {
 
 	// Minimum is initialized with 1st element from the list
-	ProcessList* minimumProcess = processList;
+	Process minimumProcess = processList->process;
 
 	// Point to 2nd element, as 1st is already the starting point - no reason to compare with itself
 	processList = processList->nextProcess;
@@ -322,10 +323,10 @@ ProcessList* GetMinimumDurationProcess(ProcessList* processList) {
 	while (processList) {
 
 		// Compare time values
-		if (processList->process.time < minimumProcess->process.time)
+		if (processList->process.time < minimumProcess.time)
 			
 			// Change minimum to current Process, which has less time consumption
-			minimumProcess = processList;
+			minimumProcess = processList->process;
 
 		// Go to next Process
 		processList = processList->nextProcess;

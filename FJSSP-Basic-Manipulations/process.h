@@ -73,5 +73,5 @@ void ShowProcessList(ProcessList* processList);
 #pragma endregion
 
 // Retrieves Process with less duration
-ProcessList* GetMinimumDurationProcess(ProcessList* processList);
+Process GetMinimumDurationProcess(ProcessList* processList);
 #endif
