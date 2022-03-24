@@ -25,7 +25,7 @@ Operation CreateOperation(int opIdentifier, ProcessList* processList) {
 
 	// Values' attribution
 	createdElement.opIdentifier = opIdentifier;
-	createdElement.alternProcesses = processList;
+	createdElement.alternProcesses = DuplicateProcessList(processList);
 
 	return createdElement;
 }
@@ -136,7 +136,7 @@ OperationList* InsertOperation(OperationList* operationList, Operation newOperat
 /// Prints values of an Operation
 /// </summary>
 void ShowOperation(Operation operation) {
-	printf("Operation %d\n", operation.opIdentifier);
+	printf("\tOperation %d\n", operation.opIdentifier);
 	ShowProcessList(operation.alternProcesses);
 }
 
