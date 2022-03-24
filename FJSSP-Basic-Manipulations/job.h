@@ -35,7 +35,12 @@ typedef struct JobList {
 	struct JobList* nextJob;
 }JobList;
 
-
+/// <summary>
+/// Defines a Job with a Process established for each Operation,
+/// instead of having all possibilities. 
+/// 
+/// It's also added the full duration of the Job.
+/// </summary>
 typedef struct JobProcess{
 	Job job;
 	int fullDuration;
