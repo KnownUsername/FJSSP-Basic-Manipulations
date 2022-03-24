@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="job.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="operation.c" />
     <ClCompile Include="process.c" />
