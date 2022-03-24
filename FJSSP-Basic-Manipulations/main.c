@@ -18,8 +18,10 @@
 
 int main() {
 
-	//Job job_test = ImportJob("../one_job.csv");
-	//ShowOperationList(job_test.operations);
+	Job job_test = ImportJob("../one_job.csv");
+
+	printf("--> Job ID: %s\n\n", job_test.jobIdentifier);
+	ShowOperationList(job_test.operations);
 
 
 	Process newProcess = CreateProcess(1, 3);
@@ -92,7 +94,7 @@ int main() {
 	printf(" \t\t >> Operations\n\n");
 	ShowOperationList(operations);
 
-	printf("\n\n \t\t >> High Time Processes « \n\n");
+	printf("\n\n \t\t >> High Time Processes  \n\n");
 	printf("Duration: %d\n\n", jp.fullDuration);
 	ShowOperationList(jp.job.operations);
 	//ImportJob("one_job.csv");

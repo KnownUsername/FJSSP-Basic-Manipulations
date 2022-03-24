@@ -1,6 +1,7 @@
 #include "job.h"
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 #pragma warning(disable: 4996)
 
 /// <summary>
@@ -12,7 +13,6 @@ Job ImportJob(char filename[]) {
 
     Job job;
     job.operations = NULL;
-  //  job.jobIdentifier = strcpy(job.jobIdentifier, "Ola");
 
     Operation* operationElement;
     Process process;
@@ -20,17 +20,17 @@ Job ImportJob(char filename[]) {
     Operation operation;
 
 	FILE* fp;
-    char processPlan[100], string2[100], string3[100], string4[100];
+    char processPlan[100], column2[100], column3[100], column4[100];
     int operationId;
 
     // Read file
 	fp = fopen(filename, "r");
 
     // Verify if file exists
-    //assert(fp);
+    assert(fp);
 
     // Skip 1st line (columns' names)
-    if (!feof(fp)) fscanf(fp, "%[^\,],%[^\,],%[^\,]\,%[^\n]\n", processPlan, string2, string3, string4);
+    if (!feof(fp)) fscanf(fp, "%[^\,],%[^\,],%[^\,]\,%[^\n]\n", processPlan, column2, column3, column4);
 
     // Walk through file
     while (!feof(fp)) {
@@ -38,7 +38,7 @@ Job ImportJob(char filename[]) {
         fscanf(fp, "%[^\,]\,%d\,%d\,%d\n", processPlan, &operationId, &process.machine, &process.time); // Get fields from each line
 
         // Job ID
-        //job.jobIdentifier = strcpy(job.jobIdentifier, processPlan);
+        job.jobIdentifier = strdup(processPlan);
 
         // On operations that are already present on a job, simply add the new Process to it
         if (OperationExists(job.operations, operationId)) {
