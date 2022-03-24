@@ -85,7 +85,7 @@ int main() {
 	
 	Job job;
 
-	job.jobIdentifier = 2;
+	job.jobIdentifier = strdup(job_test.jobIdentifier);
 	job.operations = operations;
 
 	JobProcess jp;
@@ -99,5 +99,7 @@ int main() {
 	ShowOperationList(jp.job.operations);
 	//ImportJob("one_job.csv");
 
+	if (SaveJob(job, "edited_job.csv")) printf("\nSucessfully created file with a Job data!\n");
+	else printf("\n We have some problems here, on saving Job data!\n");
 	return 0;
 }

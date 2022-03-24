@@ -145,3 +145,38 @@ JobProcess GetMaximumJobProcessLine(Job job) {
 
     return jobProcess;
 }
+
+/// <summary>
+/// Saves job data into a csv file
+/// </summary>
+/// <param name="job"></param>
+/// <param name="filename"></param>
+/// <returns></returns>
+int SaveJob(Job job, char filename[]) {
+
+    FILE* fp;
+
+    fp = fopen(filename, "w");
+
+    // 0 in case of error on opening file
+    if (!fp) return 0;
+
+    // Header
+    fprintf(fp, "%s,%s,%s,%s\n", "process_plan", "operation", "machine", "time");
+
+    // Navigate through Operations
+    for (OperationList* operationList = job.operations; operationList ; operationList = operationList->nextOperation) {
+
+        // Navigate through Processes
+        for (ProcessList* processList = operationList->operation.alternProcesses; processList ; processList = processList->nextProcess) {
+
+            // Job id | Operation id | machine | process time
+            fprintf(fp, "%s,%d,%d,%d\n", job.jobIdentifier, operationList->operation.opIdentifier, processList->process.machine, processList->process.time);
+        }
+    }
+    
+    // Clean buffer from file data
+    fclose(fp);
+
+    return 1;
+}

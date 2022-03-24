@@ -27,7 +27,9 @@ typedef struct \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperl
 \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_ae96f33b58305738f5cdc58c67fd73575}{Get\+Minimum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
 \begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_a24762f3a4eb2b63f2c0eb3253a37225c}{Get\+Maximum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
-\begin{DoxyCompactList}\small\item\em Calculates the maximum duration for a job and its respective path Path is defined by the set of Processes with higher duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the maximum duration for a job and its respective path Path is defined by the set of Processes with higher duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{job_8h_a13d701288b2e4109ba576a775d77d82f}{Save\+Job}} (\mbox{\hyperlink{struct_job}{Job}} job, char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Saves job data into a csv file \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -129,4 +131,28 @@ Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file
 
 
 Definition at line 12 of file job.\+c.
+
+\mbox{\Hypertarget{job_8h_a13d701288b2e4109ba576a775d77d82f}\label{job_8h_a13d701288b2e4109ba576a775d77d82f}} 
+\index{job.h@{job.h}!SaveJob@{SaveJob}}
+\index{SaveJob@{SaveJob}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{SaveJob()}{SaveJob()}}
+{\footnotesize\ttfamily int Save\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job,  }\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Saves job data into a csv file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 155 of file job.\+c.
 

@@ -59,6 +59,9 @@ JobProcess GetMinimumJobProcessLine(Job job);
 // Calculates the maximum duration for a job and its respective path
 JobProcess GetMaximumJobProcessLine(Job job);
 
+// Saves job data into a csv file
+int SaveJob(Job job, char filename[]);
+
 #pragma endregion
 
 #endif
