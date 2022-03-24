@@ -17,6 +17,8 @@
 
 #include "operation.h"
 
+#pragma region STRUCTURES
+
 /// <summary>
 /// Defines 1 job
 /// </summary>
@@ -33,7 +35,22 @@ typedef struct JobList {
 	struct JobList* nextJob;
 }JobList;
 
+
+typedef struct JobProcess{
+	Job job;
+	int fullDuration;
+}JobProcess;
+#pragma endregion
+
+
+#pragma region FUNCTIONS
+
 // Inserts values of 1 Job from a file
 Job ImportJob(char filename[]);
+
+// Calculates the minimum duration for a job and its respective path
+JobProcess GetMinimumJobProcessLine(Job job);
+
+#pragma endregion
 
 #endif
