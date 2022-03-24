@@ -17,6 +17,11 @@
 #include <stdio.h>
 
 int main() {
+
+	//Job job_test = ImportJob("../one_job.csv");
+	//ShowOperationList(job_test.operations);
+
+
 	Process newProcess = CreateProcess(1, 3);
 
 	Process secondProcess = CreateProcess(2, 3);
@@ -33,6 +38,8 @@ int main() {
 
 	}
 	else printf("Unsucessfull");
+
+
 
 	processList = RemoveProcess(processList, 6);
 
@@ -70,9 +77,25 @@ int main() {
 	processList3->process.machine = 13;
 
 	// Removal of an operation
-	operations = RemoveOperation(operations, 3);
+	//operations = RemoveOperation(operations, 3);
 
-	ShowOperationList(operations);
+	//ShowOperationList(operations);
 	
+	Job job;
+
+	job.jobIdentifier = 2;
+	job.operations = operations;
+
+	JobProcess jp;
+	jp = GetMinimumJobProcessLine(job);
+
+	printf(" \t\t >> Operations\n\n");
+	ShowOperationList(operations);
+
+	printf("\n\n \t\t >> Efficient Processes « \n\n");
+	printf("Duration: %d\n\n", jp.fullDuration);
+	ShowOperationList(jp.job.operations);
+	//ImportJob("one_job.csv");
+
 	return 0;
 }
