@@ -6,7 +6,7 @@
 	Subject: Advanced Data Structures
 	About: First Practical Work
 
-	File: process.h
+	File: process.c
 	Intent:
 		- Implement functions to manipulate 1 or more Processes
 */
@@ -362,4 +362,85 @@ Process GetMaximumDurationProcess(ProcessList* processList) {
 	}
 
 	return maximumProcess;
+}
+
+
+/// <summary>
+/// Searches a Process based on time
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="machine"></param>
+/// <returns> Process pointer if found or NULL if not found </returns>
+ProcessList* SearchProcessByTime(ProcessList* processList, int time) {
+
+	// Run through Operation list
+	while (processList) {
+
+		// Compare opIdentifiers' values
+		if (processList->process.time == time) return processList; // Operation found
+
+		// Navigate to next Process
+		processList = processList->nextProcess;
+
+	}
+
+	return NULL;
+}
+
+
+/// <summary>
+/// Searches all Processes on a list with same time value
+/// </summary>
+/// <param name="processList"></param>
+/// <returns></returns>
+ProcessList* SearchProcessesByTime(ProcessList* processList, int time) {
+
+	// New list to store filtered Processes
+	ProcessList* filteredList = NULL;
+
+	// Go to first Process with given time
+	processList = processList = SearchProcessByTime(processList, time);
+
+	// Validate each Search
+	while (processList) {
+
+		filteredList = InsertProcess(filteredList, processList->process);
+
+		// Find next Process with same time
+		processList = SearchProcessByTime(processList->nextProcess, time);
+	}
+
+	return filteredList;
+}
+
+/// <summary>
+/// Calculates average time of a list to complete a Process 
+/// </summary>
+/// <param name="processList"></param>
+/// <returns> Average time on success or -1 when list is empty </returns>
+float CalculateAverageProcessListTime(ProcessList* processList) {
+
+	// Variables initialized as 0 to sum values into them
+	int sum = 0, count = 0; 
+	float averageTime;
+
+	if (!processList) return -1;
+
+	// Navigate throgh list
+	while (processList) {
+
+		// Add process's time value
+		sum += processList->process.time;
+
+		// Add 1 to the counter
+		count += 1;
+
+		// Go to next element
+		processList = processList->nextProcess;
+	}
+
+	// Cast of float on 1 value, to obtain a float result
+	averageTime = (float)sum / count;
+
+	return averageTime;
 }

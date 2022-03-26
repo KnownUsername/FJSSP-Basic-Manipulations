@@ -79,4 +79,10 @@ Process GetMinimumDurationProcess(ProcessList* processList);
 // Retrieves Process with higher duration
 Process GetMaximumDurationProcess(ProcessList* processList);
 
+// Calculates average time of a list to complete a Process
+float CalculateAverageProcessListTime(ProcessList* processList);
+
+
+// Searches all Processes on a list with same time value
+ProcessList* SearchProcessesByTime(ProcessList* processList, int time);
 #endif
