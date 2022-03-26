@@ -1,3 +1,16 @@
+/*
+    Student: João Rodrigues
+    Student Number: 16928
+    Lective year: 2021/2022
+
+    Subject: Advanced Data Structures
+    About: First Practical Work
+
+    File: job.c
+    Intent:
+        - Implement functions to manipulate 1 Job
+*/
+
 #include "job.h"
 #include <stdio.h>
 #include <string.h>
@@ -9,7 +22,7 @@
 /// </summary>
 /// <param name="filename"></param>
 /// <returns></returns>
-Job ImportJob(char filename[]) {
+Job LoadJob(char filename[]) {
 
     Job job;
     job.operations = NULL;
@@ -120,23 +133,23 @@ JobProcess GetMaximumJobProcessLine(Job job) {
     jobProcess.job.operations = (OperationList*)malloc(sizeof(Operation));
     jobProcess.job.operations = NULL;
 
-    // Pointer to a copy of the Process with minimum time on each Operation
-    ProcessList* minimumTimeProcess = (ProcessList*)malloc(sizeof(ProcessList));
-    minimumTimeProcess->nextProcess = NULL;
+    // Pointer to a copy of the Process with maximum time on each Operation
+    ProcessList* maximumTimeProcess = (ProcessList*)malloc(sizeof(ProcessList));
+    maximumTimeProcess->nextProcess = NULL;
 
 
     // Cycle through operations
     while (job.operations) {
 
-        // Get Process with minimal duration
-        minimumTimeProcess->process = GetMaximumDurationProcess(job.operations->operation.alternProcesses);
+        // Get Process with maximum duration
+        maximumTimeProcess->process = GetMaximumDurationProcess(job.operations->operation.alternProcesses);
 
 
-        // Insert new Operation with respective Process with minimum time consumption
-        jobProcess.job.operations = InsertOperation(jobProcess.job.operations, CreateOperation(job.operations->operation.opIdentifier, minimumTimeProcess));
+        // Insert new Operation with respective Process with maximum time consumption
+        jobProcess.job.operations = InsertOperation(jobProcess.job.operations, CreateOperation(job.operations->operation.opIdentifier, maximumTimeProcess));
 
         // Add duration from Process with less time of current operation
-        jobProcess.fullDuration += minimumTimeProcess->process.time;
+        jobProcess.fullDuration += maximumTimeProcess->process.time;
 
 
         // Go to next Operation
