@@ -71,6 +71,9 @@ OperationList* SearchOperation(OperationList* operationList, int opIdentifier);
 // Verify if Operation exists on a list
 int OperationExists(OperationList* operationList, int opIdentifier);
 
+// Calculates average time of Operations, to complete a Process 
+float CalculateAverageOperationProcessTime(OperationList* operationList);
+
 #pragma endregion
 
 #endif

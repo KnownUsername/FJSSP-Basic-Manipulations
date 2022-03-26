@@ -6,7 +6,7 @@
 	Subject: Advanced Data Structures
 	About: First Practical Work
 
-	File: process.h
+	File: operation.c
 	Intent:
 		- Implement functions to manipulate 1 or more Processes
 */
@@ -225,4 +225,35 @@ int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId
 	// Attribution of new value
 	operation->operation.opIdentifier = newId;
 	return 1;
+}
+
+/// <summary>
+/// Calculates average time of Operations, to complete a Process 
+/// </summary>
+/// <param name="operationList"></param>
+float CalculateAverageOperationProcessTime(OperationList* operationList) {
+	
+	// Variables initialized as 0 to sum values into them
+	int count = 0;
+	float sum = 0, averageOperationTime, averageProcessListTime;
+
+	while (operationList) {
+
+		// Get average time for current Operation's ProcessList
+		averageProcessListTime = CalculateAverageProcessListTime(operationList->operation.alternProcesses);
+		
+		// If sent list is not null, the value is not -1, 
+		// so the time may be added to sum variable
+		if (averageProcessListTime != -1) sum += averageProcessListTime;
+
+		// Update counter
+		count++;
+
+		// Go to next Operation
+		operationList = operationList->nextOperation;
+	}
+	
+	averageOperationTime = (float)sum / count;
+
+	return averageOperationTime;
 }
