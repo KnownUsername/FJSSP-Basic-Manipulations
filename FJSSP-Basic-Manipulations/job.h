@@ -62,6 +62,9 @@ JobProcess GetMaximumJobProcessLine(Job job);
 // Saves job data into a csv file
 int SaveJob(Job job, char filename[]);
 
+// Prints values of a Job
+void ShowJob(Job job);
+
 #pragma endregion
 
 #endif

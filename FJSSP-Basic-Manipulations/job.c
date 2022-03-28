@@ -193,3 +193,13 @@ int SaveJob(Job job, char filename[]) {
 
     return 1;
 }
+
+/// <summary>
+/// Prints values of a Job
+/// </summary>
+/// <param name="job"></param>
+void ShowJob(Job job) {
+
+    printf("--> Job ID: %s\n\n", job.jobIdentifier);
+    ShowOperationList(job.operations);
+}
