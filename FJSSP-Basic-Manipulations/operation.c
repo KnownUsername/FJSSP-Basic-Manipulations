@@ -231,11 +231,17 @@ int ChangeOperationIdOnList(OperationList* operationList, int olderId, int newId
 /// Calculates average time of Operations, to complete a Process 
 /// </summary>
 /// <param name="operationList"></param>
+/// <return>
+/// -1 if NULL list or average of list
+/// </return>
 float CalculateAverageOperationProcessTime(OperationList* operationList) {
 	
 	// Variables initialized as 0 to sum values into them
 	int count = 0;
 	float sum = 0, averageOperationTime, averageProcessListTime;
+
+	// -1 for empty list
+	if (!operationList) return -1;
 
 	while (operationList) {
 
