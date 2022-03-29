@@ -45,14 +45,13 @@ int main() {
 		option = atoi(input);
 
 		// Valid inputs leave cycle
-		if (option && IsNumberBetweenInclusive(option, 1,2)) break;
+		if (option && IsNumberBetweenInclusive(option, 1,2)) invalid = 0;
 	}
 
 	// Reuse control variable
-	invalid = 0;
+	invalid = 1;
 
 	Job currentJob;
-
 
 	// Clear console
 	system("cls");
@@ -82,34 +81,6 @@ int main() {
 		currentJob.jobIdentifier = strdup(input);
 		currentJob.operations = NULL;
 
-
-		while (invalid) {
-
-			// Clear console
-			system("cls");
-
-			// Print info to create an Operation after creating a Job
-			ShowMenuPostCreateJob();
-			scanf("%s", input);
-
-			// Will receive inputted id, to store
-			int operationId;
-
-			// Numbers higher than 0, may be assigned as id of an Operation
-			if (operationId = atoi(input)) {
-
-				// Create a new Operation and attribute to first Operation on a Job
-				//currentJob.operations->operation = CreateOperation(operationId, NULL);
-				
-				// Change value of invalid, to be true on cicle
-				invalid = 0;
-			}
-		}
-
-
-	
-		// Reuse control variable
-		invalid = 1;
 	}
 
 
