@@ -16,7 +16,7 @@
 #include "job.h"
 #include <stdio.h>
 
-int main() {
+int main3() {
 
 	Job job_test = LoadJob("../one_job.csv");
 
