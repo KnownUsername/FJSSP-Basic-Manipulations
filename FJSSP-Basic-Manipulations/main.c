@@ -6,100 +6,532 @@
 	Subject: Advanced Data Structures
 	About: First Practical Work
 
-	File: Main.c
-	Intent: Run code's functionalities
+	File: main.c
+	Intent: An interface to allow a user to use functionalities implemented on console
 
 */
 
 #include "process.h"
 #include "operation.h"
 #include "job.h"
+#include "menus.h"
+
 #include <stdio.h>
+#include <string.h>
+
+#pragma warning(disable: 4996)
 
 int main() {
 
-	Job job_test = ImportJob("../one_job.csv");
+	char input[100];
+	int invalid = 1, option, inputtedId = 0;
+	float average;
+	JobProcess jobProcess;
 
-	printf("--> Job ID: %s\n\n", job_test.jobIdentifier);
-	ShowOperationList(job_test.operations);
+	int machine, time;
 
+	// Repeat form while invalid input
+	while(invalid){
 
-	Process newProcess = CreateProcess(1, 3);
+		// Clear console
+		system("cls");
 
-	Process secondProcess = CreateProcess(2, 3);
+		// Display first menu
+		ShowFirstMenu();
 
-	ProcessList* processList = NULL;
-	processList = InsertProcess(processList, newProcess);
+		scanf("%s", input);
 
+		// Convert string to int, if possible
+		option = atoi(input);
 
-	if (InsertProcess(processList, secondProcess)) {
-
-		newProcess.machine = 6;
-		newProcess.time = 1;
-		InsertProcess(processList, newProcess);
-
+		// Valid inputs leave cycle
+		if (option && IsNumberBetweenInclusive(option, 1,2)) break;
 	}
-	else printf("Unsucessfull");
+
+	// Reuse control variable
+	invalid = 0;
+
+	Job currentJob;
 
 
-
-	processList = RemoveProcess(processList, 6);
-
-	Operation operation;
-	operation = CreateOperation(1, processList);
-
-	/*			Operation 2			*/	
-	ProcessList* processList2 = NULL;
-	processList2 = InsertProcess(processList2, CreateProcess(1, 5));
-	InsertProcess(processList2, CreateProcess(3, 7));
-	InsertProcess(processList2, CreateProcess(4, 2));
-
-	Operation operation2 = CreateOperation(2, processList2);
-
-	/*			Operation 3			*/
-	ProcessList* processList3 = NULL;
-	processList3 = InsertProcess(processList3, CreateProcess(2, 2));
-	InsertProcess(processList3, CreateProcess(4, 3));
-	InsertProcess(processList3, CreateProcess(5, 7));
-	InsertProcess(processList3, CreateProcess(6, 8));
-
-	Operation operation3 = CreateOperation(3, processList3);
-
-	/*		List of Operations		*/
-	OperationList* operations = NULL;
-	operations = InsertOperation(operations, operation);
-	InsertOperation(operations, operation2);
-	InsertOperation(operations, operation3);
-
-	ChangeOperationIdOnList(operations, 2, 5);
-	ChangeProcessMachineOnList(SearchOperation(operations, 5)->operation.alternProcesses, 3, 6);
-	ChangeProcessTimeOnList(SearchOperation(operations, 1)->operation.alternProcesses, 1, 13);
-
-	operations->operation.alternProcesses = ReplaceAllProcesses(operations->operation.alternProcesses, processList3);
-	processList3->process.machine = 13;
-
-	// Removal of an operation
-	//operations = RemoveOperation(operations, 3);
-
-	//ShowOperationList(operations);
+	// Clear console
+	system("cls");
 	
-	Job job;
+	// Load a Job
+	if (option == 1) {
 
-	job.jobIdentifier = strdup(job_test.jobIdentifier);
-	job.operations = operations;
+		// Menu for creating a file
+		ShowFileMenu();
 
-	JobProcess jp;
-	jp = GetMaximumJobProcessLine(job);
+		// Get filename
+		scanf("%s", input);
 
-	printf(" \t\t >> Operations\n\n");
-	ShowOperationList(operations);
+		// Get Job from file
+		currentJob = LoadJob(input);
+	}
 
-	printf("\n\n \t\t >> High Time Processes  \n\n");
-	printf("Duration: %d\n\n", jp.fullDuration);
-	ShowOperationList(jp.job.operations);
-	//ImportJob("one_job.csv");
+	// Start a new Job
+	else {
 
-	if (SaveJob(job, "edited_job.csv")) printf("\nSucessfully created file with a Job data!\n");
-	else printf("\n We have some problems here, on saving Job data!\n");
-	return 0;
+		// Ask user for an ID for job
+		ShowAskForJobID();
+
+		scanf("%s", input);
+
+		// Assign input to Job's identifier
+		currentJob.jobIdentifier = strdup(input);
+		currentJob.operations = NULL;
+
+
+		while (invalid) {
+
+			// Clear console
+			system("cls");
+
+			// Print info to create an Operation after creating a Job
+			ShowMenuPostCreateJob();
+			scanf("%s", input);
+
+			// Will receive inputted id, to store
+			int operationId;
+
+			// Numbers higher than 0, may be assigned as id of an Operation
+			if (operationId = atoi(input)) {
+
+				// Create a new Operation and attribute to first Operation on a Job
+				//currentJob.operations->operation = CreateOperation(operationId, NULL);
+				
+				// Change value of invalid, to be true on cicle
+				invalid = 0;
+			}
+		}
+
+
+	
+		// Reuse control variable
+		invalid = 1;
+	}
+
+
+	//					Main menu 
+	while (option && IsNumberBetweenInclusive(option, 1, 8)) {
+
+		option = 0;
+
+		// Clear console
+		system("cls");
+
+		// Menu with all regular options
+		ShowAllToolsMenu();
+
+		scanf("%s", input);
+
+		// Convert string to int, if possible
+		option = atoi(input);
+
+		// Clean console
+		system("cls");
+
+
+
+		switch (option) {
+
+		// Show Job
+		case 1:
+
+			// Displays job being used
+			ShowJob(currentJob);
+
+			// Wait an user input to return to Principal Menu
+			// 1st getchar reads enter from previous user's input
+			getchar();
+			getchar();
+
+			break;
+
+		// Insert Operation 
+		case 2:
+
+			ShowInsertOperationMenu();
+			scanf("%s", input);
+
+			// Convert string to int, if possible
+			inputtedId = atoi(input);
+
+			// Return to Main Menu
+			if (inputtedId == -1) break;
+
+			// If id is already taken, it won't insert the Operation
+			if (OperationExists(currentJob.operations, inputtedId)) {
+				printf("\nId is already taken!");
+				getchar();
+				getchar();
+				break;
+			}
+
+			// As Operation's ID doesn't exists, it can be created
+			currentJob.operations = InsertOperation(currentJob.operations, CreateOperation(inputtedId, NULL));
+
+			printf("Operation Inserted sucessfully!\n");
+			getchar();
+			getchar();
+
+			break;
+
+		// Remove Operation
+		case 3:
+
+			ShowRemoveOperationMenu();
+			scanf("%s", input);
+
+			// Convert string to int, if possible
+			inputtedId = atoi(input);
+
+			// Return to Main Menu
+			if (inputtedId == -1) break;
+
+			// If given ID isn't present on any Operation, there's no Operation to remove
+			if (!OperationExists(currentJob.operations, inputtedId)) {
+				printf("\nNo Operation with ID = %d, was found\n", inputtedId);
+				getchar();
+				getchar();
+				break;
+			}
+
+			// Remove Operation
+			currentJob.operations = RemoveOperation(currentJob.operations, inputtedId);
+
+			printf("Operation removed!\n");
+			getchar();
+			getchar();
+
+			break;
+
+		// Edit Operation
+		case 4:
+			invalid = 1;
+			while (invalid) {
+
+				// Show Operations, for user to know, which ones are available
+				ShowOperationList(currentJob.operations);
+
+				printf("If you submit -1, you'll be redirected to Main menu\n");
+				printf("\nOperation ID to edit: ");
+
+				scanf("%s", input);
+
+				// Convert string to int, if possible
+				inputtedId = atoi(input);
+
+				// Abandon menu to edit an Operation
+				if (inputtedId == -1) break;
+
+				// If given ID isn't present on any Operation, there's no Operation to edit
+				if (!OperationExists(currentJob.operations, inputtedId)) {
+					printf("\nNo Operation with ID = %d, was found\n", inputtedId);
+					getchar();
+					getchar();
+					continue;
+				}
+
+				invalid = 0;
+			}
+
+			// Return to Main Menu
+			if (inputtedId == -1) break;
+
+			// Reuse control variable
+			invalid = 1;
+
+			// Store Operation chosen, based on given id, to edit 
+			Operation* operationToEdit = SearchOperation(currentJob.operations, inputtedId);
+
+			system("cls");
+
+			while (invalid) {
+				// Possible Options to edit an Operation
+				ShowEditOperationMenu();
+
+				scanf("%s", input);
+
+				// Convert string to int, if possible
+				inputtedId = atoi(input);
+
+				// Leave menu, to main menu
+				if (inputtedId == -1) break;
+
+				system("cls");
+				switch (inputtedId) {
+
+				// Change Operation id 
+				case 1:
+
+					while (invalid) {
+						printf("Current Operation id is: %d\n", operationToEdit->opIdentifier);
+						printf("To cancel the change, enter -1\n");
+						printf("New id: ");
+
+						scanf("%s", input);
+
+						// Convert string to int, if possible
+						inputtedId = atoi(input);
+
+						// Return to Main Menu
+						if (inputtedId == -1) break;
+
+						// If given ID isn't present on any Operation, there's no Operation to edit
+						if (OperationExists(currentJob.operations, inputtedId)) {
+							printf("\nAn Operation with ID = %d, was already created. Please choose a different value!\n", inputtedId);
+							getchar();
+							getchar();
+							continue;
+						}
+
+						// Change ID
+						operationToEdit->opIdentifier = inputtedId;
+
+						printf("Operation has now ID: %d\n", inputtedId);
+						getchar();
+						getchar();
+						invalid = 0;
+					}
+					break;
+
+				// Add Process
+				case 2:
+
+					printf("Add a Process \n\n\n Insert -1 to retrieve to Main Menu\n");
+					printf("Machine: ");
+					scanf("%s", input);
+
+					// Convert string to int, if possible
+					machine = atoi(input);
+
+					// Return to Main Menu
+					if (machine == -1) break;
+
+					printf("Time: ");
+					scanf("%s", input);
+
+					// Convert string to int, if possible
+					time = atoi(input);
+
+					// Return to Main Menu
+					if (time == -1) break;
+
+
+					// Insert Process on Operation's list of Operations
+					operationToEdit->alternProcesses = InsertProcess(operationToEdit->alternProcesses, CreateProcess(machine, time));
+					printf("Process added with success!");
+					getchar();
+					getchar();
+					
+					break;
+
+				// Edit Process
+				case 3:
+
+					while (invalid) {
+						ShowProcessList(operationToEdit->alternProcesses);
+						printf("Insert Process's machine, to change. If inputted -1, you'll be retrieved to Main menu \n");
+						printf(">> ");
+
+#pragma region MACHINE_ID
+						scanf("%s", input);
+
+						// Convert string to int, if possible
+						machine = atoi(input);
+
+						// Return to Main Menu
+						if (machine == -1) break;
+
+						// Can't edit a Process that do not exists 
+						if (!ProcessExists(operationToEdit->alternProcesses, machine)) continue;
+
+#pragma endregion
+#pragma region PRINTS_EDITProcess
+						
+						system("cls");
+
+						// Menu (information)
+						ShowChangeProcessMenuHeader();
+
+						// Show available Processes to help user pick
+						ShowProcess(SearchProcess(operationToEdit->alternProcesses, machine)->process);
+
+						// Options of fields to edit
+						ShowChangeProcessMenuOptions();
+
+#pragma endregion
+						scanf("%s", input);
+
+						// Convert string to int, if possible
+						inputtedId = atoi(input);
+
+						// Return to Menu to edit a Process
+						if (inputtedId == -1) continue;
+
+						// Change Machine
+						else if (inputtedId == 1) {
+							do {
+								// Clear Console
+								system("cls");
+
+								printf("Edit a Process - Change machine value\n");
+								printf("Input -1 to go back and submit Process ID again\n\n\n");
+								printf("New machine value: ");
+
+								scanf("%s", input);
+
+								// Convert string to int, if possible
+								inputtedId = atoi(input);
+
+								// Return to Menu to edit a Process
+								if (inputtedId == -1) continue;
+
+								// Invalid ID
+								else if (inputtedId <= 0) {
+									printf("Id must be > 0 \n");
+									getchar();
+									getchar();
+									break;
+								}
+
+								// Existent ID
+								else if (ProcessExists(operationToEdit->alternProcesses, inputtedId)) {
+									printf("Id is already taken, please try another id!");
+									getchar();
+									getchar();
+									break;
+								}
+
+								// Sucess case
+								else {
+									// Get Process's memory address
+									ProcessList* processPtr = SearchProcess(operationToEdit->alternProcesses, machine);
+									
+									// Change value on memory
+									processPtr->process.machine = inputtedId;
+									
+									printf("Sucessfully changed machine!\n");
+									invalid = 0;
+									getchar();
+									getchar();
+								}
+
+							} while (invalid);
+
+						}
+						
+						// Change Time
+						else if (inputtedId == 2) {
+							do {
+								// Clear Console
+								system("cls");
+
+								printf("Edit a Process - Change time value\n");
+								printf("Input -1 to go back and submit Process ID again\n\n\n");
+								printf("New time value: ");
+
+								scanf("%s", input);
+
+
+								// Convert string to int, if possible
+								time = atoi(input);
+
+								// Return to Menu to edit a Process
+								if (time == -1) continue;
+
+								// Invalid ID
+								else if (time <= 0) {
+									printf("Time must be > 0 \n");
+									getchar();
+									getchar();
+									break;
+								}
+
+								// Sucess Case
+								else {
+									// Get Process's memory address
+									ProcessList* processPtr = SearchProcess(operationToEdit->alternProcesses, machine);
+
+									// Change value on memory
+									processPtr->process.time = time;
+
+									printf("Sucessfully changed time!\n");
+									invalid = 0;
+									getchar();
+									getchar();
+								}
+
+							} while (invalid);
+						}
+						// Clear console
+						system("cls");
+
+					}
+
+					// Return to Main Menu
+					if (machine == -1) break;
+					break;
+
+				// Remove Process
+				case 4:
+					break;
+
+				// Show Processes
+				case 5:
+
+					ShowProcessList(operationToEdit->alternProcesses);
+					getchar();
+					break;
+
+
+				default: break;
+				}
+
+			}
+
+			break;
+
+		// Maximum time for job and Operations used
+		case 5:
+			jobProcess = GetMaximumJobProcessLine(currentJob);
+			ShowJobProcess(jobProcess);
+			getchar();
+			getchar();
+			break;
+
+		// Minimum time for job and Operations used
+		case 6:
+			jobProcess = GetMinimumJobProcessLine(currentJob);
+			ShowJobProcess(jobProcess);
+			getchar();
+			getchar();
+			break;
+
+		// Average time to complete an Operation
+		case 7:
+			average = CalculateAverageOperationProcessTime(currentJob.operations);
+			printf("Average time to complete an Operation is: %0.4f", average);
+			getchar();
+			getchar();
+			break;
+
+		// Save Job on file
+		case 8:
+			printf("Filename: ");
+			scanf("%s", input);
+
+			// Save job and test if operation was sucessful
+			if (SaveJob(currentJob, input)) printf("Sucess on saving to file!");
+			else printf("Error on creating file");
+
+			getchar();
+			getchar();
+			break;
+
+		default: break;
+		}
+	}
 }
