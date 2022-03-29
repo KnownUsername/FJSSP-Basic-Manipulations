@@ -203,3 +203,13 @@ void ShowJob(Job job) {
     printf("--> Job ID: %s\n\n", job.jobIdentifier);
     ShowOperationList(job.operations);
 }
+
+/// <summary>
+/// Prints values of a JobProcess
+/// </summary>
+/// <param name="jobProcess"></param>
+void ShowJobProcess(JobProcess jobProcess) {
+
+    ShowOperationList(jobProcess.job.operations);
+    printf("Total time: %d", jobProcess.fullDuration);
+}

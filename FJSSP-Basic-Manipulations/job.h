@@ -65,6 +65,9 @@ int SaveJob(Job job, char filename[]);
 // Prints values of a Job
 void ShowJob(Job job);
 
+// Prints values of a JobProcess
+void ShowJobProcess(JobProcess jobProcess);
+
 #pragma endregion
 
 #endif
