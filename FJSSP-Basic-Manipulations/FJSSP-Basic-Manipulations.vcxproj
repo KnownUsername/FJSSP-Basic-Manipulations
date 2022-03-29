@@ -141,12 +141,15 @@
   <ItemGroup>
     <ClCompile Include="job.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menus.c" />
+    <ClCompile Include="tests.c" />
     <ClCompile Include="operation.c" />
     <ClCompile Include="process.c" />
     <ClCompile Include="process.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="job.h" />
+    <ClInclude Include="menus.h" />
     <ClInclude Include="operation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

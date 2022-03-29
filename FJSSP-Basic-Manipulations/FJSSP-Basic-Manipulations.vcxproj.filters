@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="tests.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="process.h">
@@ -30,12 +30,21 @@
     <ClCompile Include="job.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="operation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="job.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
