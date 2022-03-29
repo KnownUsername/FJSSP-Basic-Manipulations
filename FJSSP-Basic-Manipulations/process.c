@@ -92,9 +92,6 @@ ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 	
 	// Empty List
 	if (!processList) {
-
-		// Struture to store new element on list
-		//ProcessList aux = CreateProcessListElement(newProcess);
 		
 		// Unique element is the pointer to new element
 		processList = (ProcessList*)malloc(sizeof(ProcessList));
@@ -116,9 +113,6 @@ ProcessList* InsertProcess(ProcessList* processList, Process newProcess) {
 				lastElement = lastElement->nextProcess;
 			}
 
-			// Struture to store new element on list
-			ProcessList aux = CreateProcessListElement(newProcess);
-			
 			// Connect last element to new one, by pointers
 			//lastElement->nextProcess = &aux;
 			
@@ -313,8 +307,17 @@ ProcessList* ReplaceAllProcesses(ProcessList* oldProcessList, ProcessList* newPr
 /// <returns></returns>
 Process GetMinimumDurationProcess(ProcessList* processList) {
 
+	Process minimumProcess;
+
 	// Minimum is initialized with 1st element from the list
-	Process minimumProcess = processList->process;
+	if (processList) minimumProcess = processList->process;
+	else {
+
+		// Attribute -1 to all fields - a value that makes no sense on them
+		minimumProcess.machine = -1;
+		minimumProcess.time = -1;
+		return minimumProcess;
+	}
 
 	// Point to 2nd element, as 1st is already the starting point - no reason to compare with itself
 	processList = processList->nextProcess;
@@ -341,9 +344,17 @@ Process GetMinimumDurationProcess(ProcessList* processList) {
 /// <param name="processList"></param>
 /// <returns></returns>
 Process GetMaximumDurationProcess(ProcessList* processList) {
-
+	Process maximumProcess;
+	
 	// Maximum is initialized with 1st element from the list
-	Process maximumProcess = processList->process;
+	if (processList) maximumProcess = processList->process;
+	else {
+
+		// Attribute -1 to all fields - a value that makes no sense on them
+		maximumProcess.machine = -1;
+		maximumProcess.time = -1;
+		return maximumProcess;
+	}
 
 	// Point to 2nd element, as 1st is already the starting point - no reason to compare with itself
 	processList = processList->nextProcess;
