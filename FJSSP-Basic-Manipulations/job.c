@@ -96,6 +96,8 @@ JobProcess GetMinimumJobProcessLine(Job job) {
     ProcessList* minimumTimeProcess = (ProcessList*)malloc(sizeof(ProcessList));
     minimumTimeProcess->nextProcess = NULL;
 
+    // On empty list, duration becomes -1, in signal of error
+    if (!job.operations) jobProcess.fullDuration = -1;
 
     // Cycle through operations
     while (job.operations) {
@@ -136,6 +138,9 @@ JobProcess GetMaximumJobProcessLine(Job job) {
     // Pointer to a copy of the Process with maximum time on each Operation
     ProcessList* maximumTimeProcess = (ProcessList*)malloc(sizeof(ProcessList));
     maximumTimeProcess->nextProcess = NULL;
+
+    // On empty list, duration becomes -1, in signal of error
+    if (!job.operations) jobProcess.fullDuration = -1;
 
 
     // Cycle through operations
