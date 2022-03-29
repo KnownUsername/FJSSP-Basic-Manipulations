@@ -82,6 +82,11 @@ Process GetMaximumDurationProcess(ProcessList* processList);
 // Calculates average time of a list to complete a Process
 float CalculateAverageProcessListTime(ProcessList* processList);
 
+// Verify if process exists on a list
+int ProcessExists(ProcessList* processList, int machine);
+
+// Searches a Process based on the id
+ProcessList* SearchProcess(ProcessList* processList, int machine);
 
 // Searches all Processes on a list with same time value
 ProcessList* SearchProcessesByTime(ProcessList* processList, int time);
