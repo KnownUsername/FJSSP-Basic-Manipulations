@@ -448,12 +448,47 @@ int main() {
 
 				// Remove Process
 				case 4:
+					while (invalid) {
+						ShowProcessList(operationToEdit->alternProcesses);
+						printf("Insert Process's machine to remove. If inputted -1, you'll be retrieved to Main menu \n");
+						printf(">> ");
+
+#pragma region MACHINE_ID
+						scanf("%s", input);
+
+						// Convert string to int, if possible
+						machine = atoi(input);
+
+						// Return to Main Menu
+						if (machine == -1) break;
+
+						// Can't edit a Process that do not exists 
+						if (!ProcessExists(operationToEdit->alternProcesses, machine)) {
+							printf("\n Inputted machine wasn't found\n");
+							getchar();
+							getchar();
+							continue;
+						}
+
+						// Remove Operation
+						operationToEdit->alternProcesses = RemoveProcess(operationToEdit->alternProcesses, machine);
+
+						printf("Process removed with success!\n");
+						getchar();
+						getchar();
+						invalid = 0;
+#pragma endregion
+					}
+
+					// Reuse control variable
+					invalid = 0;
 					break;
 
 				// Show Processes
 				case 5:
 
 					ShowProcessList(operationToEdit->alternProcesses);
+					getchar();
 					getchar();
 					break;
 
