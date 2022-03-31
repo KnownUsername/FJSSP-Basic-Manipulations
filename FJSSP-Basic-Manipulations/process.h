@@ -90,4 +90,8 @@ ProcessList* SearchProcess(ProcessList* processList, int machine);
 
 // Searches all Processes on a list with same time value
 ProcessList* SearchProcessesByTime(ProcessList* processList, int time);
+
+// Sums times' values and counts the occurences
+int SumAndCountTimesOnProcessList(ProcessList* processList, int* counter);
+
 #endif

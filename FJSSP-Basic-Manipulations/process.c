@@ -455,3 +455,32 @@ float CalculateAverageProcessListTime(ProcessList* processList) {
 
 	return averageTime;
 }
+
+/// <summary>
+/// Sums times' values and counts the occurences
+/// Count of values is returned via pointer
+/// </summary>
+/// <param name="processList"></param>
+/// <param name="counter"></param>
+/// <returns> Value of sum, on existent list </returns>
+int SumAndCountTimesOnProcessList(ProcessList* processList, int* counter) {
+	
+	// Initialization as 0 to sum values
+	int sum = 0;
+	*counter = 0;
+
+	// Walk through list
+	while (processList) {
+		
+		// Add time from current Process
+		sum += processList->process.time;
+
+		// Update counter
+		*counter += 1;
+		
+		// Go to next value
+		processList = processList->nextProcess;
+	}
+
+	return sum;
+}
