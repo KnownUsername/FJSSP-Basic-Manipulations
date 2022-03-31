@@ -133,8 +133,16 @@ int main() {
 			if (inputtedId == -1) break;
 
 			// If id is already taken, it won't insert the Operation
-			if (OperationExists(currentJob.operations, inputtedId)) {
+			else if (OperationExists(currentJob.operations, inputtedId)) {
 				printf("\nId is already taken!");
+				getchar();
+				getchar();
+				break;
+			}
+			
+			// Invalid ID
+			else if (inputtedId <= 0) {
+				printf("Id must be a number > 0 \n");
 				getchar();
 				getchar();
 				break;
@@ -251,11 +259,19 @@ int main() {
 						if (inputtedId == -1) break;
 
 						// If given ID isn't present on any Operation, there's no Operation to edit
-						if (OperationExists(currentJob.operations, inputtedId)) {
+						else if (OperationExists(currentJob.operations, inputtedId)) {
 							printf("\nAn Operation with ID = %d, was already created. Please choose a different value!\n", inputtedId);
 							getchar();
 							getchar();
 							continue;
+						}
+
+						// Invalid ID
+						else if (inputtedId <= 0) {
+							printf("Id must be a number > 0 \n");
+							getchar();
+							getchar();
+							break;
 						}
 
 						// Change ID
