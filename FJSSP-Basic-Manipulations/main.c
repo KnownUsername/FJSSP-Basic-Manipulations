@@ -27,66 +27,85 @@ int main() {
 	int invalid = 1, option, inputtedId = 0;
 	float average;
 	JobProcess jobProcess;
+	Job currentJob;
 
 	int machine, time;
 
 	// Repeat form while invalid input
-	while(invalid){
+	while (invalid) {
 
 		// Clear console
 		system("cls");
 
 		// Display first menu
 		ShowFirstMenu();
-
+#pragma region SOURCE_INFO
 		scanf("%s", input);
 
 		// Convert string to int, if possible
 		option = atoi(input);
 
 		// Valid inputs leave cycle
-		if (option && IsNumberBetweenInclusive(option, 1,2)) invalid = 0;
+		if (!option && !IsNumberBetweenInclusive(option, 1, 2)) continue;
+
+#pragma endregion 
+		// Clear console
+		system("cls");
+
+#pragma region LOAD_JOB
+		// Load a Job
+		if (option == 1) {
+
+			// Used to know if file was loaded or if doesn't exists
+			// 0 -> Doesn't exists
+			// 1 -> Loaded successful
+			int fileStatus;
+
+			do {
+				// Menu for creating a file
+				ShowFileMenu();
+
+				// Get filename
+				scanf("%s", input);
+
+				// Get Job from file
+				currentJob = LoadJob(input, &fileStatus);
+
+				if (!fileStatus) {
+					// Convert string to int, if possible
+					inputtedId = atoi(input);
+
+					// Leave menu, to main menu
+					if (inputtedId == -1) break;
+				}
+				
+				invalid = 0;
+
+			} while (!fileStatus);
+		}
+#pragma endregion
+
+		// Start a new Job
+		else {
+#pragma region SCRATCH-CREATED
+			// Ask user for an ID for job
+			ShowAskForJobID();
+
+			scanf("%s", input);
+
+			// Assign input to Job's identifier
+			currentJob.jobIdentifier = strdup(input);
+			currentJob.operations = NULL;
+
+			invalid = 0;
+#pragma endregion
+		}
 	}
-
-	// Reuse control variable
-	invalid = 1;
-
-	Job currentJob;
-
-	// Clear console
-	system("cls");
-	
-	// Load a Job
-	if (option == 1) {
-
-		// Menu for creating a file
-		ShowFileMenu();
-
-		// Get filename
-		scanf("%s", input);
-
-		// Get Job from file
-		currentJob = LoadJob(input);
-	}
-
-	// Start a new Job
-	else {
-
-		// Ask user for an ID for job
-		ShowAskForJobID();
-
-		scanf("%s", input);
-
-		// Assign input to Job's identifier
-		currentJob.jobIdentifier = strdup(input);
-		currentJob.operations = NULL;
-
-	}
-
 
 	//					Main menu 
 	while (option && IsNumberBetweenInclusive(option, 1, 8)) {
 
+#pragma region GET-OPTION
 		option = 0;
 
 		// Clear console
@@ -103,13 +122,13 @@ int main() {
 		// Clean console
 		system("cls");
 
-
+#pragma endregion
 
 		switch (option) {
 
 		// Show Job
 		case 1:
-
+#pragma region SHOW_JOB
 			// Displays job being used
 			ShowJob(currentJob);
 
@@ -118,11 +137,12 @@ int main() {
 			getchar();
 			getchar();
 
+#pragma endregion
 			break;
 
 		// Insert Operation 
 		case 2:
-
+#pragma region INSERT_OP
 			ShowInsertOperationMenu();
 			scanf("%s", input);
 
@@ -154,12 +174,12 @@ int main() {
 			printf("Operation Inserted sucessfully!\n");
 			getchar();
 			getchar();
-
+#pragma endregion
 			break;
 
 		// Remove Operation
 		case 3:
-
+#pragma region REMOVE_OP
 			ShowRemoveOperationMenu();
 			scanf("%s", input);
 
@@ -183,11 +203,12 @@ int main() {
 			printf("Operation removed!\n");
 			getchar();
 			getchar();
-
+#pragma endregion
 			break;
 
 		// Edit Operation
 		case 4:
+#pragma region CHOOSE_OP
 			invalid = 1;
 			while (invalid) {
 
@@ -215,7 +236,7 @@ int main() {
 
 				invalid = 0;
 			}
-
+#pragma endregion
 			// Return to Main Menu
 			if (inputtedId == -1) break;
 
@@ -227,7 +248,9 @@ int main() {
 
 			system("cls");
 
+			// Choose option on what to edit
 			while (invalid) {
+
 				// Possible Options to edit an Operation
 				ShowEditOperationMenu();
 
@@ -244,7 +267,7 @@ int main() {
 
 				// Change Operation id 
 				case 1:
-
+#pragma region CHANGE_OP
 					while (invalid) {
 						printf("Current Operation id is: %d\n", operationToEdit->opIdentifier);
 						printf("To cancel the change, enter -1\n");
@@ -282,11 +305,12 @@ int main() {
 						getchar();
 						invalid = 0;
 					}
+#pragma endregion
 					break;
 
 				// Add Process
 				case 2:
-
+#pragma region ADD_PROCESS
 					printf("Add a Process \n\n\n Insert -1 to retrieve to Main Menu\n");
 					printf("Machine: ");
 					scanf("%s", input);
@@ -306,6 +330,21 @@ int main() {
 					// Return to Main Menu
 					if (time == -1) break;
 
+					// If id is already taken, it won't insert the Process
+					else if (ProcessExists(operationToEdit->alternProcesses, inputtedId)) {
+						printf("\nId is already taken!");
+						getchar();
+						getchar();
+						break;
+					}
+
+					// Invalid ID
+					else if (inputtedId <= 0) {
+						printf("Id must be a number > 0 \n");
+						getchar();
+						getchar();
+						break;
+					}
 
 					// Insert Process on Operation's list of Operations
 					operationToEdit->alternProcesses = InsertProcess(operationToEdit->alternProcesses, CreateProcess(machine, time));
@@ -313,6 +352,7 @@ int main() {
 					getchar();
 					getchar();
 					
+#pragma endregion
 					break;
 
 				// Edit Process
@@ -340,6 +380,7 @@ int main() {
 						
 						system("cls");
 
+#pragma region MENU_PROCESS
 						// Menu (information)
 						ShowChangeProcessMenuHeader();
 
@@ -348,6 +389,7 @@ int main() {
 
 						// Options of fields to edit
 						ShowChangeProcessMenuOptions();
+#pragma endregion
 
 #pragma endregion
 						scanf("%s", input);
@@ -358,6 +400,7 @@ int main() {
 						// Return to Menu to edit a Process
 						if (inputtedId == -1) continue;
 
+#pragma region CHANGE_MACHINE
 						// Change Machine
 						else if (inputtedId == 1) {
 							do {
@@ -409,7 +452,8 @@ int main() {
 							} while (invalid);
 
 						}
-						
+#pragma endregion
+#pragma region CHANGE_TIME
 						// Change Time
 						else if (inputtedId == 2) {
 							do {
@@ -450,7 +494,7 @@ int main() {
 									getchar();
 									getchar();
 								}
-
+#pragma endregion
 							} while (invalid);
 						}
 						// Clear console
@@ -464,6 +508,7 @@ int main() {
 
 				// Remove Process
 				case 4:
+#pragma region REMOVE_PROCESS
 					while (invalid) {
 						ShowProcessList(operationToEdit->alternProcesses);
 						printf("Insert Process's machine to remove. If inputted -1, you'll be retrieved to Main menu \n");
@@ -498,17 +543,17 @@ int main() {
 
 					// Reuse control variable
 					invalid = 0;
+#pragma endregion
 					break;
 
 				// Show Processes
 				case 5:
-
+#pragma region SHOW_PROCESSES
 					ShowProcessList(operationToEdit->alternProcesses);
 					getchar();
 					getchar();
 					break;
-
-
+#pragma endregion
 				default: break;
 				}
 
@@ -518,30 +563,38 @@ int main() {
 
 		// Maximum time for job and Operations used
 		case 5:
+#pragma region MAX_OPERATIONS
+			printf("Maximum time unit's quantity, necessary to complete job and corresponding operations\n\n\n");
 			jobProcess = GetMaximumJobProcessLine(currentJob);
 			ShowJobProcess(jobProcess);
 			getchar();
 			getchar();
+#pragma endregion
 			break;
 
 		// Minimum time for job and Operations used
 		case 6:
+#pragma region MIN-OPERATIONS
+			printf("Minimum time unit's quantity, necessary to complete job and corresponding operations\n\n\n");
 			jobProcess = GetMinimumJobProcessLine(currentJob);
 			ShowJobProcess(jobProcess);
 			getchar();
 			getchar();
+#pragma endregion 
 			break;
 
 		// Average time to complete an Operation
+#pragma region AVERAGE
 		case 7:
 			average = CalculateAverageOperationProcessTime(currentJob.operations);
 			printf("Average time to complete an Operation is: %0.4f", average);
 			getchar();
 			getchar();
 			break;
-
+#pragma endregion
 		// Save Job on file
 		case 8:
+#pragma region SAVE_JOB
 			printf("Filename: ");
 			scanf("%s", input);
 
@@ -551,6 +604,7 @@ int main() {
 
 			getchar();
 			getchar();
+#pragma endregion
 			break;
 
 		default: break;
