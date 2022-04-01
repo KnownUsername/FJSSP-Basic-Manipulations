@@ -18,7 +18,8 @@
 
 int main3() {
 
-	Job job_test = LoadJob("../one_job.csv");
+	int loadStatus;
+	Job job_test = LoadJob("../one_job.csv", &loadStatus);
 
 	printf("--> Job ID: %s\n\n", job_test.jobIdentifier);
 	ShowOperationList(job_test.operations);
