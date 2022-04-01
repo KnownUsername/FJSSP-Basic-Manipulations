@@ -22,14 +22,18 @@ typedef struct \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperl
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8h_a883cfbef556e6354faecbc3d64dbd188}{Import\+Job}} (char filename\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{job_8h_afd421e028e22d0e53c3445b8a01b39d6}{Load\+Job}} (char filename\mbox{[}$\,$\mbox{]}, int $\ast$status)
+\begin{DoxyCompactList}\small\item\em Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file status takes value 1 if it loaded with success or 0 if file not found \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_ae96f33b58305738f5cdc58c67fd73575}{Get\+Minimum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
 \begin{DoxyCompactList}\small\item\em Calculates the minimum duration for a job and its respective path Path is defined by the set of Processes with less duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_job_process}{Job\+Process}} \mbox{\hyperlink{job_8h_a24762f3a4eb2b63f2c0eb3253a37225c}{Get\+Maximum\+Job\+Process\+Line}} (\mbox{\hyperlink{struct_job}{Job}} job)
 \begin{DoxyCompactList}\small\item\em Calculates the maximum duration for a job and its respective path Path is defined by the set of Processes with higher duration on each \mbox{\hyperlink{struct_operation}{Operation}} \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{job_8h_a13d701288b2e4109ba576a775d77d82f}{Save\+Job}} (\mbox{\hyperlink{struct_job}{Job}} job, char filename\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Saves job data into a csv file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Saves job data into a csv file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{job_8h_a9e92f18d9e7676a1c17f788169c0dc66}{Show\+Job}} (\mbox{\hyperlink{struct_job}{Job}} job)
+\begin{DoxyCompactList}\small\item\em Prints values of a \mbox{\hyperlink{struct_job}{Job}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{job_8h_ab70c24c1db2ededb064a5e2fdf965711}{Show\+Job\+Process}} (\mbox{\hyperlink{struct_job_process}{Job\+Process}} job\+Process)
+\begin{DoxyCompactList}\small\item\em Prints values of a \mbox{\hyperlink{struct_job_process}{Job\+Process}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -86,7 +90,7 @@ Calculates the maximum duration for a job and its respective path Path is define
 \end{DoxyReturn}
 
 
-Definition at line 114 of file job.\+c.
+Definition at line 134 of file job.\+c.
 
 \mbox{\Hypertarget{job_8h_ae96f33b58305738f5cdc58c67fd73575}\label{job_8h_ae96f33b58305738f5cdc58c67fd73575}} 
 \index{job.h@{job.h}!GetMinimumJobProcessLine@{GetMinimumJobProcessLine}}
@@ -108,17 +112,17 @@ Calculates the minimum duration for a job and its respective path Path is define
 \end{DoxyReturn}
 
 
-Definition at line 76 of file job.\+c.
+Definition at line 94 of file job.\+c.
 
-\mbox{\Hypertarget{job_8h_a883cfbef556e6354faecbc3d64dbd188}\label{job_8h_a883cfbef556e6354faecbc3d64dbd188}} 
-\index{job.h@{job.h}!ImportJob@{ImportJob}}
-\index{ImportJob@{ImportJob}!job.h@{job.h}}
-\doxysubsubsection{\texorpdfstring{ImportJob()}{ImportJob()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} Import\+Job (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{job_8h_afd421e028e22d0e53c3445b8a01b39d6}\label{job_8h_afd421e028e22d0e53c3445b8a01b39d6}} 
+\index{job.h@{job.h}!LoadJob@{LoadJob}}
+\index{LoadJob@{LoadJob}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{LoadJob()}{LoadJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} Load\+Job (\begin{DoxyParamCaption}\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
 
 
 
-Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file 
+Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file status takes value 1 if it loaded with success or 0 if file not found 
 
 
 \begin{DoxyParams}{Parameters}
@@ -126,11 +130,11 @@ Inserts values of 1 \mbox{\hyperlink{struct_job}{Job}} from a file
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+Loaded \mbox{\hyperlink{struct_job}{Job}} from file 
 \end{DoxyReturn}
 
 
-Definition at line 12 of file job.\+c.
+Definition at line 27 of file job.\+c.
 
 \mbox{\Hypertarget{job_8h_a13d701288b2e4109ba576a775d77d82f}\label{job_8h_a13d701288b2e4109ba576a775d77d82f}} 
 \index{job.h@{job.h}!SaveJob@{SaveJob}}
@@ -154,5 +158,43 @@ Saves job data into a csv file
 \end{DoxyReturn}
 
 
-Definition at line 155 of file job.\+c.
+Definition at line 178 of file job.\+c.
+
+\mbox{\Hypertarget{job_8h_a9e92f18d9e7676a1c17f788169c0dc66}\label{job_8h_a9e92f18d9e7676a1c17f788169c0dc66}} 
+\index{job.h@{job.h}!ShowJob@{ShowJob}}
+\index{ShowJob@{ShowJob}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{ShowJob()}{ShowJob()}}
+{\footnotesize\ttfamily void Show\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}}}]{job }\end{DoxyParamCaption})}
+
+
+
+Prints values of a \mbox{\hyperlink{struct_job}{Job}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file job.\+c.
+
+\mbox{\Hypertarget{job_8h_ab70c24c1db2ededb064a5e2fdf965711}\label{job_8h_ab70c24c1db2ededb064a5e2fdf965711}} 
+\index{job.h@{job.h}!ShowJobProcess@{ShowJobProcess}}
+\index{ShowJobProcess@{ShowJobProcess}!job.h@{job.h}}
+\doxysubsubsection{\texorpdfstring{ShowJobProcess()}{ShowJobProcess()}}
+{\footnotesize\ttfamily void Show\+Job\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job_process}{Job\+Process}}}]{job\+Process }\end{DoxyParamCaption})}
+
+
+
+Prints values of a \mbox{\hyperlink{struct_job_process}{Job\+Process}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+Process} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file job.\+c.
 

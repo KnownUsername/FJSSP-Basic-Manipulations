@@ -33,7 +33,9 @@ void \mbox{\hyperlink{operation_8h_acd0fcf1bbdbf64b06df0de37a37775a2}{Show\+Oper
 \mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$ \mbox{\hyperlink{operation_8h_a32769da4e29a6b1be25e75404f307823}{Search\+Operation}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int op\+Identifier)
 \begin{DoxyCompactList}\small\item\em Searches an \mbox{\hyperlink{struct_operation}{Operation}} based on the id \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{operation_8h_aa4d242826bfd6bb5e54e661d4e59d9c6}{Operation\+Exists}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List, int op\+Identifier)
-\begin{DoxyCompactList}\small\item\em Verify if \mbox{\hyperlink{struct_operation}{Operation}} exists on a list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verify if \mbox{\hyperlink{struct_operation}{Operation}} exists on a list \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{operation_8h_ac5bef494ac8ba40c76e35a9a744495f9}{Calculate\+Average\+Operation\+Process\+Time}} (\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$operation\+List)
+\begin{DoxyCompactList}\small\item\em Calculates average time of Operations, to complete a \mbox{\hyperlink{struct_process}{Process}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -60,6 +62,25 @@ Defines a list of Operations
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{operation_8h_ac5bef494ac8ba40c76e35a9a744495f9}\label{operation_8h_ac5bef494ac8ba40c76e35a9a744495f9}} 
+\index{operation.h@{operation.h}!CalculateAverageOperationProcessTime@{CalculateAverageOperationProcessTime}}
+\index{CalculateAverageOperationProcessTime@{CalculateAverageOperationProcessTime}!operation.h@{operation.h}}
+\doxysubsubsection{\texorpdfstring{CalculateAverageOperationProcessTime()}{CalculateAverageOperationProcessTime()}}
+{\footnotesize\ttfamily float Calculate\+Average\+Operation\+Process\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation_list}{Operation\+List}} $\ast$}]{operation\+List }\end{DoxyParamCaption})}
+
+
+
+Calculates average time of Operations, to complete a \mbox{\hyperlink{struct_process}{Process}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em operation\+List} & \\
+\hline
+\end{DoxyParams}
+$<$return$>$ -\/1 if N\+U\+LL list or average of list $<$/return$>$ 
+
+Definition at line 237 of file operation.\+c.
+
 \mbox{\Hypertarget{operation_8h_a17671e02c4b0691055c980a8c44c784a}\label{operation_8h_a17671e02c4b0691055c980a8c44c784a}} 
 \index{operation.h@{operation.h}!ChangeOperationIdOnList@{ChangeOperationIdOnList}}
 \index{ChangeOperationIdOnList@{ChangeOperationIdOnList}!operation.h@{operation.h}}

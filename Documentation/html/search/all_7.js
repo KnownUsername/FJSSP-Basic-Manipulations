@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['machine_24',['machine',['../struct_process.html#a6ac9453efcb58ad0e2a78ef0ee5db289',1,'Process']]],
-  ['main_25',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['main_2ec_26',['main.c',['../main_8c.html',1,'']]]
+  ['loadjob_26',['LoadJob',['../job_8c.html#afd421e028e22d0e53c3445b8a01b39d6',1,'LoadJob(char filename[], int *status):&#160;job.c'],['../job_8h.html#afd421e028e22d0e53c3445b8a01b39d6',1,'LoadJob(char filename[], int *status):&#160;job.c']]]
 ];

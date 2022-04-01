@@ -40,7 +40,17 @@ void \mbox{\hyperlink{process_8h_a5065d553fd66b0d47ff8353f30d97437}{Show\+Proces
 \mbox{\hyperlink{struct_process}{Process}} \mbox{\hyperlink{process_8h_aeb7ee3aff667ece420d934239094673c}{Get\+Minimum\+Duration\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
 \begin{DoxyCompactList}\small\item\em Retrieves \mbox{\hyperlink{struct_process}{Process}} with less duration \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_process}{Process}} \mbox{\hyperlink{process_8h_afcdf8c2fc852810aba2ffbb2f8311d8e}{Get\+Maximum\+Duration\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
-\begin{DoxyCompactList}\small\item\em Retrieves \mbox{\hyperlink{struct_process}{Process}} with higher duration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retrieves \mbox{\hyperlink{struct_process}{Process}} with higher duration \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{process_8h_aa8ea604f49df7a4fa37113148f5c4a03}{Calculate\+Average\+Process\+List\+Time}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List)
+\begin{DoxyCompactList}\small\item\em Calculates average time of a list to complete a \mbox{\hyperlink{struct_process}{Process}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8h_ad312336d79e765456605370d73d60acc}{Process\+Exists}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine)
+\begin{DoxyCompactList}\small\item\em Verify if process exists on a list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8h_ac3772c66f770adde4e69453a92d9326b}{Search\+Process}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int machine)
+\begin{DoxyCompactList}\small\item\em Searches a \mbox{\hyperlink{struct_process}{Process}} based on the id \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$ \mbox{\hyperlink{process_8h_a929d6da27a1403a8d6fede802b1fe381}{Search\+Processes\+By\+Time}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int time)
+\begin{DoxyCompactList}\small\item\em Searches all Processes on a list with same time value \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_8h_a4730b0325f02d143fd2e3921a233742b}{Sum\+And\+Count\+Times\+On\+Process\+List}} (\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$process\+List, int $\ast$counter)
+\begin{DoxyCompactList}\small\item\em Sums times\textquotesingle{} values and counts the occurences Count of values is returned via pointer \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -67,6 +77,28 @@ Defines a list of Processes
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_8h_aa8ea604f49df7a4fa37113148f5c4a03}\label{process_8h_aa8ea604f49df7a4fa37113148f5c4a03}} 
+\index{process.h@{process.h}!CalculateAverageProcessListTime@{CalculateAverageProcessListTime}}
+\index{CalculateAverageProcessListTime@{CalculateAverageProcessListTime}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{CalculateAverageProcessListTime()}{CalculateAverageProcessListTime()}}
+{\footnotesize\ttfamily float Calculate\+Average\+Process\+List\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List }\end{DoxyParamCaption})}
+
+
+
+Calculates average time of a list to complete a \mbox{\hyperlink{struct_process}{Process}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average time on success or -\/1 when list is empty 
+\end{DoxyReturn}
+
+
+Definition at line 432 of file process.\+c.
+
 \mbox{\Hypertarget{process_8h_ac3087b7876b6e91a163527cbd5a6cd8b}\label{process_8h_ac3087b7876b6e91a163527cbd5a6cd8b}} 
 \index{process.h@{process.h}!ChangeProcessMachineOnList@{ChangeProcessMachineOnList}}
 \index{ChangeProcessMachineOnList@{ChangeProcessMachineOnList}!process.h@{process.h}}
@@ -91,7 +123,7 @@ Changes the machine of a \mbox{\hyperlink{struct_process}{Process}}, on a list
 \end{DoxyReturn}
 
 
-Definition at line 233 of file process.\+c.
+Definition at line 227 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a202ff96838a15eff2b55d6dcb62c091a}\label{process_8h_a202ff96838a15eff2b55d6dcb62c091a}} 
 \index{process.h@{process.h}!ChangeProcessTimeOnList@{ChangeProcessTimeOnList}}
@@ -117,7 +149,7 @@ Changes the time of a \mbox{\hyperlink{struct_process}{Process}} of a machine, o
 \end{DoxyReturn}
 
 
-Definition at line 255 of file process.\+c.
+Definition at line 249 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a48de4261659da2774cc4c2dcc16f6af9}\label{process_8h_a48de4261659da2774cc4c2dcc16f6af9}} 
 \index{process.h@{process.h}!CreateProcess@{CreateProcess}}
@@ -160,7 +192,7 @@ Deletes a list (= removes all elements on the list, leaving it empty) Recursive 
 \end{DoxyParams}
 
 
-Definition at line 213 of file process.\+c.
+Definition at line 207 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a31562a1de36cdee103c9cf2e4cbb97dd}\label{process_8h_a31562a1de36cdee103c9cf2e4cbb97dd}} 
 \index{process.h@{process.h}!DuplicateProcessList@{DuplicateProcessList}}
@@ -182,7 +214,7 @@ Duplicates a \mbox{\hyperlink{struct_process}{Process}} list
 \end{DoxyReturn}
 
 
-Definition at line 275 of file process.\+c.
+Definition at line 269 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_afcdf8c2fc852810aba2ffbb2f8311d8e}\label{process_8h_afcdf8c2fc852810aba2ffbb2f8311d8e}} 
 \index{process.h@{process.h}!GetMaximumDurationProcess@{GetMaximumDurationProcess}}
@@ -204,7 +236,7 @@ Retrieves \mbox{\hyperlink{struct_process}{Process}} with higher duration
 \end{DoxyReturn}
 
 
-Definition at line 343 of file process.\+c.
+Definition at line 346 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_aeb7ee3aff667ece420d934239094673c}\label{process_8h_aeb7ee3aff667ece420d934239094673c}} 
 \index{process.h@{process.h}!GetMinimumDurationProcess@{GetMinimumDurationProcess}}
@@ -226,7 +258,7 @@ Retrieves \mbox{\hyperlink{struct_process}{Process}} with less duration
 \end{DoxyReturn}
 
 
-Definition at line 314 of file process.\+c.
+Definition at line 308 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_ad6cf09edf0587e66f4a7d80b03a9ec9d}\label{process_8h_ad6cf09edf0587e66f4a7d80b03a9ec9d}} 
 \index{process.h@{process.h}!InsertProcess@{InsertProcess}}
@@ -252,6 +284,30 @@ Inserts a \mbox{\hyperlink{struct_process}{Process}} on a list of processes
 
 Definition at line 91 of file process.\+c.
 
+\mbox{\Hypertarget{process_8h_ad312336d79e765456605370d73d60acc}\label{process_8h_ad312336d79e765456605370d73d60acc}} 
+\index{process.h@{process.h}!ProcessExists@{ProcessExists}}
+\index{ProcessExists@{ProcessExists}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ProcessExists()}{ProcessExists()}}
+{\footnotesize\ttfamily int Process\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine }\end{DoxyParamCaption})}
+
+
+
+Verify if process exists on a list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/$>$ True $\vert$ 0 -\/$>$ False 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file process.\+c.
+
 \mbox{\Hypertarget{process_8h_a0a45b151b9ebbf342843ed100822eabc}\label{process_8h_a0a45b151b9ebbf342843ed100822eabc}} 
 \index{process.h@{process.h}!RemoveProcess@{RemoveProcess}}
 \index{RemoveProcess@{RemoveProcess}!process.h@{process.h}}
@@ -274,7 +330,7 @@ Removes a process from a list, given its using machine
 \end{DoxyReturn}
 
 
-Definition at line 172 of file process.\+c.
+Definition at line 166 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a08744ebe03d98b1086658282eac1c59f}\label{process_8h_a08744ebe03d98b1086658282eac1c59f}} 
 \index{process.h@{process.h}!ReplaceAllProcesses@{ReplaceAllProcesses}}
@@ -298,7 +354,53 @@ Deletes all Processes of a list, and inserts Processes from the other
 \end{DoxyReturn}
 
 
-Definition at line 298 of file process.\+c.
+Definition at line 292 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_ac3772c66f770adde4e69453a92d9326b}\label{process_8h_ac3772c66f770adde4e69453a92d9326b}} 
+\index{process.h@{process.h}!SearchProcess@{SearchProcess}}
+\index{SearchProcess@{SearchProcess}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{SearchProcess()}{SearchProcess()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Search\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{machine }\end{DoxyParamCaption})}
+
+
+
+Searches a \mbox{\hyperlink{struct_process}{Process}} based on the id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em machine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_process}{Process}} pointer if found or N\+U\+LL if not found 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_a929d6da27a1403a8d6fede802b1fe381}\label{process_8h_a929d6da27a1403a8d6fede802b1fe381}} 
+\index{process.h@{process.h}!SearchProcessesByTime@{SearchProcessesByTime}}
+\index{SearchProcessesByTime@{SearchProcessesByTime}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{SearchProcessesByTime()}{SearchProcessesByTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_process_list}{Process\+List}}$\ast$ Search\+Processes\+By\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+Searches all Processes on a list with same time value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 407 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a1b241ddb7c969501b01055692b5ec3c7}\label{process_8h_a1b241ddb7c969501b01055692b5ec3c7}} 
 \index{process.h@{process.h}!ShowProcess@{ShowProcess}}
@@ -317,7 +419,7 @@ Prints values of a \mbox{\hyperlink{struct_process}{Process}}
 \end{DoxyParams}
 
 
-Definition at line 141 of file process.\+c.
+Definition at line 135 of file process.\+c.
 
 \mbox{\Hypertarget{process_8h_a5065d553fd66b0d47ff8353f30d97437}\label{process_8h_a5065d553fd66b0d47ff8353f30d97437}} 
 \index{process.h@{process.h}!ShowProcessList@{ShowProcessList}}
@@ -336,5 +438,29 @@ Shows values of processes on a list
 \end{DoxyParams}
 
 
-Definition at line 152 of file process.\+c.
+Definition at line 146 of file process.\+c.
+
+\mbox{\Hypertarget{process_8h_a4730b0325f02d143fd2e3921a233742b}\label{process_8h_a4730b0325f02d143fd2e3921a233742b}} 
+\index{process.h@{process.h}!SumAndCountTimesOnProcessList@{SumAndCountTimesOnProcessList}}
+\index{SumAndCountTimesOnProcessList@{SumAndCountTimesOnProcessList}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{SumAndCountTimesOnProcessList()}{SumAndCountTimesOnProcessList()}}
+{\footnotesize\ttfamily int Sum\+And\+Count\+Times\+On\+Process\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_list}{Process\+List}} $\ast$}]{process\+List,  }\item[{int $\ast$}]{counter }\end{DoxyParamCaption})}
+
+
+
+Sums times\textquotesingle{} values and counts the occurences Count of values is returned via pointer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em process\+List} & \\
+\hline
+{\em counter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of sum, on existent list 
+\end{DoxyReturn}
+
+
+Definition at line 466 of file process.\+c.
 

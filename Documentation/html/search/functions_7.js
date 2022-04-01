@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['removeoperation_86',['RemoveOperation',['../operation_8c.html#abadabea5e9276d0cb51ca391a0cf11b4',1,'RemoveOperation(OperationList *operationList, int opIdentifier):&#160;operation.c'],['../operation_8h.html#abadabea5e9276d0cb51ca391a0cf11b4',1,'RemoveOperation(OperationList *operationList, int opIdentifier):&#160;operation.c']]],
-  ['removeprocess_87',['RemoveProcess',['../process_8c.html#a0a45b151b9ebbf342843ed100822eabc',1,'RemoveProcess(ProcessList *processList, int machineID):&#160;process.c'],['../process_8h.html#a0a45b151b9ebbf342843ed100822eabc',1,'RemoveProcess(ProcessList *processList, int machineID):&#160;process.c']]],
-  ['replaceallprocesses_88',['ReplaceAllProcesses',['../process_8c.html#a08744ebe03d98b1086658282eac1c59f',1,'ReplaceAllProcesses(ProcessList *oldProcessList, ProcessList *newProcessList):&#160;process.c'],['../process_8h.html#a08744ebe03d98b1086658282eac1c59f',1,'ReplaceAllProcesses(ProcessList *oldProcessList, ProcessList *newProcessList):&#160;process.c']]]
+  ['printinputreceiver_116',['PrintInputReceiver',['../menus_8c.html#a280e31fa72084af6cd3565047fb3c566',1,'menus.c']]],
+  ['processexists_117',['ProcessExists',['../process_8c.html#ad312336d79e765456605370d73d60acc',1,'ProcessExists(ProcessList *processList, int machine):&#160;process.c'],['../process_8h.html#ad312336d79e765456605370d73d60acc',1,'ProcessExists(ProcessList *processList, int machine):&#160;process.c']]]
 ];
