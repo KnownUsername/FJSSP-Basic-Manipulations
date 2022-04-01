@@ -62,6 +62,9 @@ int main() {
 			int fileStatus;
 
 			do {
+
+				system("cls");
+
 				// Menu for creating a file
 				ShowFileMenu();
 
@@ -77,6 +80,10 @@ int main() {
 
 					// Leave menu, to main menu
 					if (inputtedId == -1) break;
+
+					printf("File does not exist.\n");
+					getchar();
+					getchar();
 				}
 				
 				invalid = 0;
