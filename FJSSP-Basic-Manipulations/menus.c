@@ -28,6 +28,7 @@ void ShowFilesInfo() {
 	// Data Information
 	printf("This program uses .csv files to store data.");
 	printf("\nYou can find an example, called \"one_job.csv\" that you can load or get to know the data format. \n");
+	printf("To use this file, have in mind that is located 1 directory backwards.\n");
 
 	// Blank lines
 	printf("\n\n\n");
