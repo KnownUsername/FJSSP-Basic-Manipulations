@@ -19,10 +19,12 @@
 
 /// <summary>
 /// Inserts values of 1 Job from a file
+/// status takes value 1 if it loaded with success
+///                 or 0 if file not found
 /// </summary>
 /// <param name="filename"></param>
-/// <returns></returns>
-Job LoadJob(char filename[]) {
+/// <returns>Loaded Job from file </returns>
+Job LoadJob(char filename[], int* status) {
 
     Job job;
     job.operations = NULL;
@@ -40,7 +42,10 @@ Job LoadJob(char filename[]) {
 	fp = fopen(filename, "r");
 
     // Verify if file exists
-    assert(fp);
+    if (!fp) {
+        *status = 0;
+        return job;
+    }
 
     // Skip 1st line (columns' names)
     if (!feof(fp)) fscanf(fp, "%[^\,],%[^\,],%[^\,]\,%[^\n]\n", processPlan, column2, column3, column4);
