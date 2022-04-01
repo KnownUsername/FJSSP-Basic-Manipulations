@@ -315,7 +315,7 @@ Process GetMinimumDurationProcess(ProcessList* processList) {
 
 		// Attribute -1 to all fields - a value that makes no sense on them
 		minimumProcess.machine = -1;
-		minimumProcess.time = -1;
+		minimumProcess.time = 0;
 		return minimumProcess;
 	}
 
@@ -352,7 +352,7 @@ Process GetMaximumDurationProcess(ProcessList* processList) {
 
 		// Attribute -1 to all fields - a value that makes no sense on them
 		maximumProcess.machine = -1;
-		maximumProcess.time = -1;
+		maximumProcess.time = 0;
 		return maximumProcess;
 	}
 
